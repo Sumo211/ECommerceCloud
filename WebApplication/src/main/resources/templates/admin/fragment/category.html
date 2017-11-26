@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Category</title>
+</head>
+<body>
+<div id="page-content">
+    <div class="row row-margin">
+        <div class="col-md-4 col-xs-12">
+            <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addCategoryModal">Add new category</button>
+        </div>
+    </div>
+    <div class="row row-margin">
+        <div class="col-md-12 col-xs-12">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover table-condensed" id="category-table">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Image URL</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="category : ${categories}" th:object="${category}">
+                        <td th:text="*{id}"></td>
+                        <td th:text="*{name}" th:id="name + *{id}"></td>
+                        <td th:text="*{description}" th:id="desc + *{id}"></td>
+                        <td th:text="*{image}" th:id="image + *{id}"></td>
+                        <td>
+                            <button class="btn btn-warning btn-xs" type="button" th:attr="category-id=*{id}"
+                                    id="edit-category-button" th:onclick="'editCategory(\''+ *{id} + '\');'"
+                                    data-toggle="modal" data-target="#editCategoryModal">
+                                Edit
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger btn-xs" type="button" th:attr="category-id=*{id}"
+                                    id="delete-category-button" th:onclick="'deleteCategory(\''+ *{id} + '\');'"
+                                    data-toggle="modal" data-target="#deleteCategoryModal">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

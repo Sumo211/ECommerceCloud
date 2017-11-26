@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<aside id="sidebar" class="col-sm-4 col-md-3 no-animate-widgets">
+    <div id="woocommerce_product_categories-2"
+         class="widget woocommerce widget_product_categories m_bottom_40 m_xs_bottom_30">
+        <h5 class="widget-title color_dark tt_uppercase second_font fw_light m_bottom_13">Product Categories</h5>
+        <hr class="divider_bg m_bottom_23 m_top_0">
+        <form id="search-advanced-form" class="wpcf7-form" novalidate="novalidate">
+            <ul>
+                <li class="clearfix m_bottom_12"><label class="field_title second_font">SKU:</label>
+                    <div class="field_container">
+                        <span class="wpcf7-form-control-wrap text-312">
+                            <input id="sku-input" type="text" name="text-312" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false">
+                        </span>
+                    </div>
+                </li>
+                <li class="clearfix m_bottom_12"><label class="field_title second_font">Manufacture:</label>
+                    <div class="field_container">
+                        <span class="wpcf7-form-control-wrap text-312">
+                            <input id="manufacture-input" type="text" name="text-312" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false">
+                        </span>
+                    </div>
+                </li>
+
+                <li class="clearfix m_bottom_12">
+                    <label class="field_title second_font">Price:</label>
+                    <div class="field_container m_top_0">
+                        <span class="wpcf7-form-control-wrap menu-228">
+                            <div class="styled_select relative">
+                                <div id="price-from-option" class="select_title fs_medium fw_light color_light relative tr_all">Please select</div>
+                                <ul class="options_list tr_all bg_grey_light hidden">
+                                    <li th:each="price : ${prices}" class="tr_delay color_dark sc_hover" th:text="${price}"></li>
+                                </ul>
+                            </div>
+                        </span>
+                    </div>
+                    <label class="field_title second_font">to</label>
+                    <div class="field_container m_top_0">
+                        <span class="wpcf7-form-control-wrap menu-228">
+                            <div class="styled_select relative">
+                                <div id="price-to-option" class="select_title fs_medium fw_light color_light relative tr_all">Please select</div>
+                                <ul class="options_list tr_all bg_grey_light hidden">
+                                    <li th:each="price : ${prices}" class="tr_delay color_dark sc_hover" th:text="${price}"></li>
+                                </ul>
+                            </div>
+                        </span>
+                    </div>
+                </li>
+
+                <li class="clearfix m_bottom_12">
+                    <label class="field_title second_font">Size:</label>
+                    <div class="field_container m_top_0">
+                        <span class="wpcf7-form-control-wrap menu-228">
+                            <div class="styled_select relative">
+                                <div id="size-option" class="select_title fs_medium fw_light color_light relative tr_all">Please select</div>
+                                <ul class="options_list tr_all bg_grey_light hidden">
+                                    <li th:each="size : ${sizes}" class="tr_delay color_dark sc_hover" th:text="${size}"></li>
+                                </ul>
+                            </div>
+                        </span>
+                    </div>
+                </li>
+
+                <li class="clearfix m_bottom_12">
+                    <label class="field_title second_font">Color:</label>
+                    <ul id="color-button" class="wp-tag-cloud hr_list tags_list second_font fs_medium" style="margin-left: 0;">
+                        <li th:each="color : ${colors}" class="m_right_3 m_bottom_3">
+                            <a class="tag-link-9 tag-link-position-1 tr_delay button_type_1 d_block grey state_2"
+                               title="6 topics" style="font-size: 13px; cursor: pointer;" th:text="${color}"></a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="clearfix m_bottom_12">
+                    <label class="field_title second_font">Material:</label>
+                    <ul id="material-button" class="wp-tag-cloud hr_list tags_list second_font fs_medium" style="margin-left: 0;">
+                        <li th:each="material : ${materials}" class="m_right_3 m_bottom_3">
+                            <a class="tag-link-9 tag-link-position-1 tr_delay button_type_1 d_block grey state_2"
+                               title="6 topics" style="font-size: 13px; cursor: pointer;" th:text="${material}"></a>
+                        </li>
+                    </ul>
+                </li>
+                <button class="second_font w_full tt_uppercase fs_medium button_type_2 black state_2 d_block tr_all"
+                        id="search-advanced-button" name="newsletter-submit" type="submit">Search
+                </button>
+            </ul>
+        </form>
+    </div>
+
+    <div id="widget-zn-mailchimp-2" class="widget widget_zn_mailchimp m_bottom_40 m_xs_bottom_30">
+        <h5 class="widget-title color_dark tt_uppercase second_font fw_light m_bottom_13">Newsletter Sign Up</h5>
+        <hr class="divider_bg m_bottom_23 m_top_0">
+        <div class="theme_box">
+            <div id="mailchimp-sign-up" class="mailchimp-sign-up">
+                <p class="form_caption  m_bottom_15">Get exclusive deals you will not find anywhere
+                    else straight to your inbox!</p>
+            </div>
+            <form class="newsletter" action="#" method="POST">
+                <input id="s-email" class="tr_all fw_light w_full fs_medium m_bottom_10"
+                       type="email" name="email" placeholder="Enter your email address">
+                <button id="signup-submit"
+                        class="second_font w_full tt_uppercase fs_medium button_type_2 black state_2 d_block tr_all"
+                        name="newsletter-submit" type="submit">Subscribe
+                </button>
+            </form>
+        </div>
+    </div>
+
+</aside>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Header</title>
+</head>
+
+<body th:fragment="header">
+<header id="header" data-shrink="1" class="type_2 w_inherit">
+    <div class="header_middle_part type_2 t_xs_align_c">
+        <div class="container">
+            <div class="d_table w_full d_xs_block">
+                <div class="col-lg-4 col-md-4 col-sm-4 d_table_cell d_xs_block f_none v_align_m m_xs_bottom_15 search_block">
+                    <form id="searchform" th:action="@{/search-by-name}" method="get"
+                          class="relative f_left f_xs_none m_right_3 db_xs_centered button_in_input search_form">
+                        <input type="search" value="" name="name" id="s" autocomplete="off"
+                               class="fs_medium color_light fw_light w_full tr_all" placeholder="Search&hellip;" />
+                        <button type="submit" class="color_dark tr_all color_lbrown_hover">
+                            <i class="fa fa-search d_inline_m"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 d_table_cell t_align_c
+                    d_xs_block f_none v_align_m m_xs_bottom_15 logo_block">
+                    <a id="logo" class="logo d_inline_b" title="Just another WordPress site"
+                       href="http://velikorodnov.com/wordpress/cosyone/fashion/">
+                        <img src="../img/uploads/2016/07/logo_demo5.png" alt="Just another WordPress site" />
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 d_table_cell d_xs_block f_none v_align_m t_align_r t_xs_align_c">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header_bottom_part bg_white type_2 t_sm_align_c w_inherit">
+        <div class="sticky_part">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 d_sm_block w_sm_full d_table_cell d_xs_block f_none v_align_m m_xs_bottom_15"></div>
+                    <div class="header_menu_block col-lg-5 col-md-5 d_sm_block w_sm_full d_table_cell d_xs_block f_none v_align_m">
+                        <button id="mobile_menu_button" class="vc_child d_xs_block db_xs_centered
+                            d_none m_bottom_10 m_top_15 bg_lbrown color_white tr_all">
+                            <i class="fa fa-navicon d_inline_m"></i>
+                        </button>
+                        <nav class="d_xs_none t_sm_align_l d_sm_inline_b main_menu_nav">
+                            <div id="mega_main_menu" class="primary primary_style-flat icons-left
+                                first-lvl-align-left first-lvl-separator-none direction-horizontal fullwidth-disable
+                                pushing_content-disable mobile_minimized-disable dropdowns_trigger-hover
+                                dropdowns_animation-anim_4 no-logo no-search no-woo_cart no-buddypress
+                                responsive-enable coercive_styles-disable indefinite_location_mode-disable
+                                language_direction-ltr version-2-1-2 mega_main mega_main_menu" style="z-index: 990;">
+                                <div class="menu_holder">
+                                    <div class="mmm_fullwidth_container"></div>
+                                    <div class="menu_inner">
+                                        <span class="nav_logo">
+                                            <a class="mobile_toggle">
+                                                <span class="mobile_button">Menu &nbsp;
+                                                    <span class="symbol_menu">≡</span>
+                                                    <span class="symbol_cross">╳</span>
+                                                </span>
+                                            </a>
+                                        </span>
+                                        <ul id="mega_main_menu_ul" class="mega_main_menu_ul">
+                                            <li id="menu-item-393" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children
+                                                menu-item-393 default_dropdown default_style drop_to_right submenu_default_width columns1">
+                                                <a href="/" class="item_link  disable_icon" tabindex="1">
+                                                    <i class=""></i>
+                                                    <span class="link_content">
+                                                        <span class="link_text">Home</span>
+                                                        </span>
+                                                </a>
+                                            </li>
+
+                                            <li id="menu-item-430" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-430 default_dropdown default_style drop_to_right submenu_default_width columns1">
+                                                <a href="/about" class="item_link  disable_icon" tabindex="51">
+                                                    <i class=""></i>
+                                                    <span class="link_content">
+                                                        <span class="link_text">
+                                                            About Us
+                                                        </span>
+                                                    </span>
+                                                </a>
+
+                                            </li>
+                                            <li id="menu-item-434" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-434 default_dropdown default_style drop_to_right submenu_default_width columns1">
+                                                <a href="/contact" class="item_link  disable_icon" tabindex="55">
+                                                    <i class=""></i>
+                                                    <span class="link_content">
+                                                        <span class="link_text">
+                                                            Contact
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                            </li>
+
+                                            <li id="menu-item-435" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-435 default_dropdown default_style drop_to_right submenu_default_width columns1">
+                                                <a href="/login" class="item_link  disable_icon" tabindex="56">
+                                                    <i class=""></i>
+                                                    <span class="link_content">
+                                                        <span class="link_text">
+                                                            Sign in/ Sign up
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </nav>
+                    </div>
+                    <div class="header_search_block col-lg-5 col-md-5 d_sm_block w_sm_full d_table_cell d_xs_block f_none v_align_m m_xs_bottom_15">
+                        <ul class="hr_list si_list list_with_focused_form shop_list f_right f_sm_none d_sm_inline_b t_sm_align_l t_xs_align_c">
+                            <li class="m_xs_bottom_5">
+                                <div class="search_form_container d_inline_b relative" style="width: 16em; margin-right: 5px;" sec:authorize="isAuthenticated()">
+                                    <a th:href="@{/logout}" style="white-space: nowrap; margin-top: 0.6em; float: right; margin-left: 0.3em; text-decoration: underline;"
+                                       onmouseover="this.style.color='#8c0303';" onmouseout="this.style.color='#000';">logout</a>
+                                    <!--<p style="white-space: nowrap; margin-top: 0.6em; float: right;" th:text="'Welcome'"></p>-->
+                                    <p style="white-space: nowrap; margin-top: 0.6em; float: right; margin-left: 0.2em; color: #8c0303; text-transform: uppercase;" sec:authentication="name"></p>
+                                </div>
+                            </li>
+
+                            <li id="cart-navigation" class="relative open_mini_shopping_cart d_xs_inline_b t_xs_align_l dropdown-list"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+</body>
+
+</html>

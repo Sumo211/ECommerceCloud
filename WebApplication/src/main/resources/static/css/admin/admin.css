@@ -1,0 +1,30 @@
+.row-margin {
+    margin: 10px;
+}
+
+/*---table---*/
+tr {
+    background-color: white;
+}
+
+/*---category--table---*/
+#category-table tr th:nth-child(1) {
+    width: 4%;
+}
+
+#category-table tr th:nth-child(2) {
+    width: 40%;
+}
+
+#category-table tr th:nth-child(3) {
+    width: 40%;
+}
+
+
+#category-table tr th:nth-child(4) {
+    width: 8%;
+}
+
+#category-table tr th:nth-child(4) {
+    width: 8%;
+}

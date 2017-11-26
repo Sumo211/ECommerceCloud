@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Shopping Cart</title>
+    <meta th:replace="home/fragment/css" />
+</head>
+
+<body data-spy="scroll" data-target="#navigation" class="page page-id-246 page-template-default mmm mega_main_menu-2-1-2
+    animated-content mad__queryloader sticky_menu woocommerce-account woocommerce-page wpb-js-composer js-comp-ver-4.12 vc_responsive">
+<div id="wrapper">
+    <nav id="mobile-advanced" class="mobile-advanced"></nav>
+    <div class="wide_layout">
+        <header th:replace="home/fragment/header"></header>
+        <div class="page_wrapper no_sidebar">
+            <div class="container content-holder">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="extra-heading ">
+                            <h2 class="extra-title fw_light second_font color_dark m_bottom_25 tt_uppercase">Shopping Cart</h2>
+                        </div>
+                        <section class="section-main">
+                            <div class="woocommerce">
+                                <div th:if="${#lists.isEmpty(lineItems)}">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="second_font cart-empty">Your cart is currently empty.</p>
+                                        <p class="return-to-shop">
+                                            <a class="button_type_2 tt_uppercase fs_medium second_font tr_all t_align_c black state_2 wc-backward" href="/">Return To Shop</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                </div>
+                                <div th:if="${not #lists.isEmpty(lineItems)}">
+                                    <div th:if="${status} eq 'updated'">
+                                        <div class="woocommerce-message">Cart updated.</div>
+                                    </div>
+                                    <div th:if="${status} eq 'deleted'">
+                                        <div class="woocommerce-message">Removed successfully.</div>
+                                    </div>
+                                    <div th:if="${checkoutMessage != null}">
+                                        <div class="woocommerce-message" th:text="${checkoutMessage}"></div>
+                                    </div>
+                                    <form class="relative b_default_layout" action="#" method="post">
+                                        <section class="relative">
+                                            <div class="table_wrap">
+                                                <table class="shop_table cart w_full shopping_cart_table m_bottom_38 m_xs_bottom_30" cellspacing="0">
+                                                    <thead class="d_xs_none">
+                                                    <tr class="bg_grey_light_2 second_font">
+                                                        <th class="product_image_col"><b>Product Image</b></th>
+                                                        <th class="product_title_col"><b>Product Name</b></th>
+                                                        <th><b>Price</b></th>
+                                                        <th class="product_qty_col"><b>Quantity</b></th>
+                                                        <th><b>Total</b></th>
+                                                        <th class="product_actions_col"></th>
+                                                    </tr>
+                                                    </thead>
+
+                                                    <tbody>
+
+                                                    <tr th:each="item: ${lineItems}" class="cart_item" th:object="${item}">
+                                                        <td class="product_image_col" data-title="Product Image">
+                                                            <a href="#">
+                                                                <img width="100" height="100" th:src="@{*{clothes.image}}"
+                                                                     class="attachment-100x100 size-100x100 wp-post-image" alt="pic23_1-750x750">
+                                                            </a>
+                                                        </td>
+                                                        <td data-title="Product Name">
+                                                            <a class="product_title sc_hover second_font fs_large d_inline_b m_bottom_4"
+                                                               href="#" th:text="*{clothes.name}"></a>
+                                                        </td>
+
+                                                        <td class="subtotal second_font lh_small color_dark" data-title="Price">
+                                                            <del th:remove="*{clothes.discount} eq 0 ? tag : none">
+                                                                <span class="woocommerce-Price-amount amount">
+                                                                    <span class="woocommerce-Price-currencySymbol" th:text="*{#numbers.formatDecimal(clothes.price, 0, 'POINT', 0, 'POINT')} + ' VND'"></span>
+                                                                </span>
+                                                            </del>
+                                                        </td>
+
+                                                        <td data-title="Quantity">
+                                                            <div class="qty min clearfix">
+                                                                <button type="button" class="minus">-</button>
+                                                                <input type="number" step="1" min="0" th:attr="data-quantity=*{quantity}"
+                                                                       th:value="*{quantity}" title="Qty" class="input-text qty text" size="4">
+                                                                <button type="button" class="plus">+</button>
+                                                            </div>
+                                                        </td>
+
+                                                        <td class="total bold second_font color_dark" data-title="Total">
+                                                            <span class="woocommerce-Price-amount amount">
+                                                                <span class="woocommerce-Price-currencySymbol"
+                                                                      th:text="*{#numbers.formatDecimal((clothes.price - (clothes.price * clothes.discount))*quantity, 0, 'POINT', 0, 'POINT')} + ' VND'"></span>
+                                                            </span>
+                                                        </td>
+
+                                                        <td data-title="Action" class="t_align_c">
+                                                            <a class="remove-clothes-event d_inline_b button_type_8 black_hover grey state_2 m_xs_bottom_0
+                                                                tr_all color_dark t_align_c vc_child m_bottom_5 remove_product remove" title="Remove this item" th:attr="data-product-id=*{clothes.id}">
+                                                                <i class="fa fa-times fs_large d_inline_m"></i>
+                                                            </a>
+                                                            <br class="d_xs_none">
+                                                            <button title="Update Cart" type="submit" class="button_type_8 black_hover grey state_2 m_xs_bottom_0 tr_all color_dark t_align_c vc_child edit_product"
+                                                                    value="update_cart" name="update_cart" th:attr="data-product-id=*{clothes.id}">
+                                                                <i class="fa fa-check fs_large d_inline_m"></i>
+                                                            </button>
+                                                            <input type="hidden" id="_wpnonce" name="_wpnonce" value="">
+                                                            <input type="hidden" name="_wp_http_referer" value="">
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                    <tr class="bg_grey_light_2">
+                                                        <td colspan="7">
+                                                            <a href="/" class="button_type_2 d_block tt_uppercase fs_medium second_font f_left tr_all f_xs_none t_align_c m_xs_bottom_5 lbrown state_2">
+                                                                <span class="d_inline_b m_left_10 m_right_10">Continue Shopping</span>
+                                                            </a>
+                                                            <a href="/clear-cart"
+                                                               class="d_block button_type_2 tt_uppercase fs_medium second_font f_right tr_all t_align_c f_xs_none w_xs_full grey state_2">
+                                                                <span class="d_inline_b m_left_10 m_right_10">Clear Shopping Cart</span>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div><!--/ .table_wrap-->
+                                        </section><!--/ .section_offset-->
+                                        <section class="section_offset">
+                                            <div class="row">
+                                                <section class="col-lg-3 col-md-3 col-sm-3 m_bottom_40 m_xs_bottom_30"></section>
+                                                <section class="col-lg-5 col-md-5 col-sm-5 m_bottom_40 m_xs_bottom_30"></section>
+                                                <section class="col-lg-4 col-md-4 col-sm-4 m_bottom_40 m_xs_bottom_30 cart-collaterals">
+                                                    <div class="cart_totals ">
+                                                        <h5 class="color_dark tt_uppercase second_font fw_light m_bottom_13">Cart Totals</h5>
+                                                        <hr class="divider_bg m_bottom_25">
+                                                        <div class="table_wrap">
+                                                            <table class="shop_table shop_table_responsive w_full total_sc_table second_font type_2 t_xs_align_c" cellspacing="0">
+                                                                <tbody>
+                                                                <tr class="order-total total scheme_color">
+                                                                    <td><b>Subtotal</b></td>
+                                                                    <td data-title="Subtotal">
+                                                                        <b class="fs_large">
+                                                                            <strong>
+                                                                                <span class="woocommerce-Price-amount amount">
+                                                                                    <span class="woocommerce-Price-currencySymbol" th:text="${#numbers.formatDecimal(subTotal, 0, 'POINT', 0, 'POINT')} + ' VND'"></span>
+                                                                                </span>
+                                                                            </strong>
+                                                                        </b>
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+                                                                <tfoot>
+                                                                <tr class="bg_grey_light_2 t_align_c">
+                                                                    <td colspan="2">
+                                                                        <a href="/checkout"
+                                                                           class="checkout-button button_type_2 tt_uppercase fs_medium second_font tr_all lbrown d_block w_full m_top_10 m_bottom_15">Proceed to Checkout</a>
+                                                                    </td>
+                                                                </tr>
+                                                                </tfoot>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                        </section>
+                                    </form>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer th:replace="home/fragment/footer"></footer>
+    </div>
+</div>
+
+<button class="back_to_top animated button_type_6 grey state_2 d_block black_hover f_left vc_child tr_all"><i class="fa fa-angle-up d_inline_m"></i></button>
+
+<div th:replace="home/fragment/js"></div>
+</body>
+
+</html>

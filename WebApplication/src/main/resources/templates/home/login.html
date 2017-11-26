@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Login</title>
+    <meta th:replace="home/fragment/css" />
+</head>
+
+<body data-spy="scroll" data-target="#navigation" class="page page-id-246 page-template-default mmm mega_main_menu-2-1-2
+    animated-content mad__queryloader sticky_menu woocommerce-account woocommerce-page wpb-js-composer js-comp-ver-4.12 vc_responsive">
+<div id="wrapper">
+    <nav id="mobile-advanced" class="mobile-advanced"></nav>
+    <div class="wide_layout">
+        <header th:replace="home/fragment/header"></header>
+        <div class="page_wrapper sbl">
+            <div class="container">
+                <div class="row">
+                    <aside th:replace="home/fragment/sidebar"></aside>
+                    <main id="main" class="col-sm-8 col-md-9 content-holder">
+                        <div class='extra-heading '>
+                            <h2 class='extra-title fw_light second_font color_dark m_bottom_25 tt_uppercase'>My Account</h2>
+                        </div>
+                        <section id="account-section" class="section-main">
+                            <div class="woocommerce">
+                                <div class="vc_general vc_tta vc_tta-tabs vc_tta-color-grey vc_tta-style-default
+                                    vc_tta-shape-rounded vc_tta-spacing-1 vc_tta-tabs-position-top vc_tta-controls-align-left">
+                                    <div class="vc_tta-tabs-container">
+                                        <ul class="vc_tta-tabs-list">
+                                            <li class="vc_tta-tab vc_active" data-vc-tab="1">
+                                                <a data-vc-tabs="" data-vc-container=".vc_tta">
+                                                    <span class="vc_tta-title-text">Sign in</span>
+                                                </a>
+                                            </li>
+                                            <li class="vc_tta-tab" data-vc-tab="2">
+                                                <a data-vc-tabs="" data-vc-container=".vc_tta">
+                                                    <span class="vc_tta-title-text">Sign up</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="vc_tta-panels-container">
+                                        <div class="vc_tta-panels">
+                                            <div class="vc_tta-panel vc_active" id="1451403382322-5baaf691-b185" data-vc-content=".vc_tta-panel-body">
+                                                <div class="vc_tta-panel-body" style="">
+                                                    <div class="wpb_text_column wpb_content_element ">
+                                                        <div class="wpb_wrapper">
+                                                            <div th:replace="home/fragment/login"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="vc_tta-panel" id="1451403382396-29df2030-0025" data-vc-content=".vc_tta-panel-body">
+                                                <div class="vc_tta-panel-body" style="">
+                                                    <form  method="post" th:action="@{/sign-up}" th:object="${customerDTO}">
+                                                        <div class="wpb_text_column wpb_content_element ">
+                                                            <div class="wpb_wrapper">
+                                                                <div class="row">
+                                                                    <div th:replace="home/fragment/signup :: billingForm(${customerDTO})"></div>
+                                                                    <div class="col-lg-6 col-md-6 col-sm-6 second_font">
+                                                                        <p class="form-row form-row form-row-last validate-required validate-phone" id="billing_password_field">
+                                                                            <label for="billing_password_field" class="">Password <abbr class="required" title="required">*</abbr></label>
+                                                                            <input type="password" class="input-text" th:field="*{password}">
+                                                                        </p>
+                                                                        <div class="clear"></div>
+                                                                    </div>
+                                                                    <div class="col-lg-6 col-md-6 col-sm-6 second_font"></div>
+                                                                    <div class="col-lg-6 col-md-6 col-sm-6 second_font">
+                                                                        <p class="form-row form-row form-row-first validate-required" id="billing_reenter_password_field">
+                                                                            <label for="billing_reenter_password_field" class="">Re-enter Password<abbr class="required" title="required">*</abbr></label>
+                                                                            <input type="password" class="input-text" >
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="clear"></div><br>
+                                                                <div class="col-lg-6 col-md-6 col-sm-6 m_xs_bottom_30 second_font">
+                                                                    <p class="form-row">
+                                                                        <input class="woocommerce-Button d_block button_type_2 button_type2_full
+                                                                    tt_uppercase fs_medium f_left t_align_c black state_2 m_bottom_5 tr_all" name="login" type="submit" value="Sign up">
+                                                                    </p>
+                                                                    <div class="f_right t_align_r fs_medium lh_small">
+                                                                        <div class="m_bottom_5">
+                                                                            <span class="required"></span> Required Fields
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+                </div>
+            </div>
+        </div>
+        <footer th:replace="home/fragment/footer"></footer>
+    </div>
+</div>
+<!--back to top-->
+<button class="back_to_top animated button_type_6 grey state_2 d_block black_hover f_left vc_child tr_all"><i class="fa fa-angle-up d_inline_m"></i></button>
+
+<div th:replace="home/fragment/js"></div>
+</body>
+
+</html>

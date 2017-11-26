@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<button id="open_shopping_cart" class="color_dark active_lbrown tr_all"
+        data-amount="0" data-open-dropdown="#shopping_cart">
+    <i class="fa fa-shopping-cart fs_large"></i>
+    <sup th:text="${cartSize}"></sup>
+    <b class="total_price second_font fs_small d_inline_b m_left_10">
+        <span class="woocommerce-Price-amount amount">
+            <span class="woocommerce-Price-currencySymbol" th:text="${#numbers.formatDecimal(subTotal, 0, 'POINT', 0, 'POINT')} + ' VND'"></span>
+        </span>
+    </b>
+</button>
+
+<div id="shopping_cart" data-show="fadeInUp" style="width: 320px" data-hide="fadeOutDown" class="shopping_cart bg_grey_light dropdown animated">
+    <div th:if="${cartSize eq 0}" class="widget_shopping_cart_content">
+        <div th:if="${cartSize eq 0}" class="sc_header fs_small fw_light empty">No products in the cart.</div>
+    </div>
+
+    <div th:if="${cartSize > 0}" class="widget_shopping_cart_content">
+        <div class="sc_header fs_small fw_light">Recently added item(s)</div>
+        <div th:each="item : ${lineItems}" class="mini_cart_product" th:object="${item}">
+            <hr class="divider_white">
+            <div class="clearfix sc_product">
+                <a class="product_thumb" href="#">
+                    <img width="60" height="60" th:src="@{*{clothes.image}}" class="attachment-60x60 size-60x60 wp-post-image" alt="pic02_3-750x750">
+                </a>
+
+                <div class="product_text" style="width: 210px;">
+                    <a href="#" class="product_name second_font color_dark sc_hover d_block m_bottom_4" th:text="*{clothes.name}"></a>
+                    <p>
+                        <span th:if="*{clothes.discount eq 0}" class="quantity">
+                            <span class="woocommerce-Price-amount amount">
+                                <span style="font-weight: normal;" class="woocommerce-Price-currencySymbol" th:text="*{quantity} + ' x '"></span>
+                                <span class="woocommerce-Price-currencySymbol" th:text="*{#numbers.formatDecimal(clothes.price, 0, 'POINT', 0, 'POINT')} + ' VND'"></span>
+                            </span>
+                        </span>
+                        <span th:if="*{clothes.discount > 0}" class="quantity">
+                            <span class="woocommerce-Price-currencySymbol" th:text="*{quantity} + ' x '"></span>
+                            <del>
+                                <span class="woocommerce-Price-amount amount">
+                                    <span class="woocommerce-Price-currencySymbol" th:text="*{#numbers.formatDecimal(clothes.price, 0, 'POINT', 0, 'POINT')} + ' VND'"></span>
+                                </span>
+                            </del>
+                            <ins>
+                                <span class="woocommerce-Price-amount amount">
+                                    <span class="woocommerce-Price-currencySymbol" th:text="*{#numbers.formatDecimal(clothes.price - (clothes.price * clothes.discount), 0, 'POINT', 0, 'POINT')} + ' VND'"></span>
+                                </span>
+                            </ins>
+                        </span>
+                    </p>
+                </div>
+
+                <a href="#" class="close remove-product fs_small color_light tr_all color_dark_hover fw_light" title="Remove this item" data-cart_id="1c9ac0159c94d8d0cbedc973445af2da" data-product_id="156">x</a>
+            </div>
+        </div>
+        <hr class="divider_white  m_bottom_5">
+        <a th:href="@{/get-cart}" class="button_type_2 tt_uppercase fs_medium second_font d_block t_align_c black state_2 m_bottom_5">View Cart</a>
+        <a th:href="@{/checkout}" class="t_align_c tt_uppercase w_full second_font d_block fs_medium button_type_2 lbrown tr_all checkout">Checkout</a>
+    </div>
+</div>
+</html>

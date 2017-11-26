@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div class="account-container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 m_xs_bottom_30 second_font" id="customer_login1">
+            <p class="m_bottom_10 color_dark second_font">Already registered? Please log in below:</p>
+            <form method="post" class="login" th:action="@{/login}">
+                <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row w_full">
+                    <label for="username" class="required clickable d_inline_b m_bottom_5 second_font" >Email address</label>
+                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text tr_all
+                        w_full fs_medium color_light" name="username" id="username" />
+                </p>
+                <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row w_full">
+                    <label for="password" class="required clickable d_inline_b m_bottom_5 second_font" >Password</label>
+                    <input class="woocommerce-Input woocommerce-Input--text input-text tr_all w_full fs_medium color_light"
+                           type="password" name="password" id="password" />
+                </p>
+
+                <div class="clear"></div>
+                <p class="form-row">
+                    <input type="submit" class="woocommerce-Button d_block button_type_2 button_type2_full tt_uppercase
+                        fs_medium f_left t_align_c black state_2 m_bottom_5 tr_all" name="login" value="Login" />
+                <div class="f_right t_align_r fs_medium lh_small">
+                    <div class="m_bottom_5" style="margin-top: 0.8em">
+                        <span class="required"></span> Required Fields
+                    </div>
+                </div>
+            </form>
+        </div><!--/ .col-2-->
+    </div>
+</div><!--/ .tabs-holder-->
+</html>

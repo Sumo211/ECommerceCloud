@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+</head>
+<body>
+<div id="page-content">
+    <div class="row row-margin">
+        <div class="col-md-4 col-xs-12">
+            <button id="addNewProductButton" class="btn btn-primary" type="button" data-toggle="modal" data-target="#addNewProductModal">Add new clothes</button>
+        </div>
+    </div>
+    <div class="row row-margin">
+        <div class="col-md-12 col-xs-12">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover table-condensed" id="clothes-table">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Category</th>
+                        <th>Name</th>
+                        <th>SKU</th>
+                        <th>Description</th>
+                        <th>Image Link</th>
+                        <th>Price</th>
+                        <th>Manufacture</th>
+                        <th>Size</th>
+                        <th>Color</th>
+                        <th>Material</th>
+                        <th>Discount</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="clothes : ${clothes}" th:object="${clothes}">
+                            <td th:text="*{id}"></td>
+                            <td th:text="*{categoryId}" th:id="name + *{id}"></td>
+                            <td th:text="*{name}"></td>
+                            <td th:text="*{sku}"></td>
+                            <td th:text="*{description}"></td>
+                            <td th:text="*{image}"></td>
+                            <td th:text="*{price}"></td>
+                            <td th:text="*{manufacture}"></td>
+                            <td th:text="*{size?.name()}"></td>
+                            <td th:text="*{color?.name()}"></td>
+                            <td th:text="*{material?.name()}"></td>
+                            <td th:text="*{discount}"></td>
+                            <td>
+                                <button class="btn btn-warning btn-xs" type="button" th:attr="clothes-id=*{id}"
+                                        id="edit-clothes-button" th:onclick="'editClothes(\'' + *{id} + '\');'"
+                                        data-toggle="modal" data-target="#addNewProductModal">
+                                    Edit
+                                </button>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger btn-xs" type="button" th:attr="clothes-id=*{id}"
+                                        id="delete-clothes-button" th:onclick="'deleteClothes(\'' + *{id} + '\');'"
+                                        data-toggle="modal" data-target="#deleteClothesModal">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

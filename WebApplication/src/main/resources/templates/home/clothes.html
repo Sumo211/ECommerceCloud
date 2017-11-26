@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Clothes</title>
+    <meta th:replace="home/fragment/css"/>
+</head>
+
+<body data-spy="scroll" data-target="#navigation"
+      class="page page-id-246 page-template-default mmm mega_main_menu-2-1-2
+            animated-content mad__queryloader sticky_menu woocommerce-account
+            woocommerce-page wpb-js-composer js-comp-ver-4.12 vc_responsive">
+
+    <div id="wrapper">
+        <nav id="mobile-advanced" class="mobile-advanced"></nav>
+        <div class="wide_layout">
+            <header th:replace="home/fragment/header"></header>
+
+            <div class="page_wrapper sbl">
+                <div class="container">
+                    <div class="row">
+                        <aside th:replace="home/fragment/search"></aside>
+
+                        <main id="main" class="col-sm-8 col-md-9 content-holder">
+                            <div class="products-container clearfix shop-columns-3 type_2 view-grid">
+                                <div class="extra-heading">
+                                    <h2 class="extra-title fw_light second_font color_dark m_bottom_25 tt_uppercase">Searching Results</h2>
+                                </div>
+                                <figure class="category_description clearfix m_bottom_30 m_xs_bottom_30 full">
+                                    <div class="term-description">
+                                        <!--<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+                                            Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec erat volutpat. Duis ac turpis.
+                                            Donec sit amet eros. Lorem ipsum dolor sit amet.</p>-->
+                                    </div>
+                                </figure>
+                                <header class="shop-page-meta" style="display: none;">
+                                    <div class="d_table w_full m_bottom_5">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 d_xs_block v_align_m d_table_cell f_none fs_medium color_light fw_light m_xs_bottom_5">
+                                            <div class="d_inline_m m_right_5">Sort by:</div>
+                                            <div class="styled_select relative d_inline_m m_right_2">
+                                                <div class="select_title type_3 fs_medium fw_light color_light relative tr_all">Default Order</div>
+
+                                                <ul class="options_list dropdown options_list tr_all hidden bg_grey_light_2">
+                                                    <li class="animated_item">
+                                                        <a class="selected" href="?product_order=default">Default Order</a>
+                                                    </li>
+                                                    <li class="animated_item">
+                                                        <a href="?product_order=title">Name</a>
+                                                    </li>
+                                                    <li class="animated_item">
+                                                        <a href="?product_order=price">Price</a>
+                                                    </li>
+                                                    <li class="animated_item">
+                                                        <a href="?product_order=date">Date</a>
+                                                    </li>
+                                                    <li class="animated_item">
+                                                        <a href="?product_order=popularity">Popularity</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <a title="Click to order products descending" class="order-param-desc button_type_4 grey state_2 tr_all
+                            second_font tt_uppercase vc_child black_hover d_inline_m t_align_c" href="?product_sort=desc">
+                                                <i class="fa fa-sort-amount-desc d_inline_m m_top_0"></i>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6 col-sm-6 d_xs_block v_align_m d_table_cell f_none t_align_r t_xs_align_l p_xs_left_0">
+                                            <p class="fw_light fs_medium d_inline_m m_right_5 color_light m_bottom_0">View as:</p>
+                                            <div class="clearfix d_inline_m">
+                                                <div class="list-or-grid clearfix d_inline_m">
+                                                    <a href="#" data-view="view-grid" class="active m_right_5 button_type_4 f_left grey state_2
+                                    tr_all second_font tt_uppercase vc_child black_hover d_inline_m t_align_c">
+                                                        <i class="fa fa-th m_top_0 d_inline_m"></i>
+                                                    </a>
+                                                    <a href="#" data-view="list_view_products" class=" button_type_4 f_left grey state_2 tr_all
+                                    second_font tt_uppercase vc_child black_hover d_inline_m t_align_c">
+                                                        <i class="fa fa-th-list m_top_0 d_inline_m"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="divider_light m_bottom_5">
+
+                                    <div class="d_table w_full m_bottom_15">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 d_xs_block v_align_m d_table_cell f_none fs_medium color_light fw_light m_xs_bottom_5">
+                                            <div class="d_inline_m m_right_17 woocommerce-result-count">
+                                                Results all 8
+                                            </div>
+
+                                            <div class="d_inline_m m_right_8">Show:</div>
+
+                                            <div class="styled_select relative d_inline_m">
+
+                                                <div class="select_title type_2 fs_medium fw_light color_light relative tr_all">12</div>
+
+                                                <ul class="options_list tr_all bg_grey_light_2 hidden">
+                                                    <li class="animated_item">
+                                                        <a class="selected" href="?paged=1&amp;product_count=12">12</a>
+                                                    </li>
+                                                    <li class="animated_item">
+                                                        <a href="?paged=1&amp;product_count=24">24</a>
+                                                    </li>
+                                                    <li class="animated_item">
+                                                        <a href="?paged=1&amp;product_count=36">36</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </header><!--/ .shop-page-meta-->
+
+                                <div th:with="clothes=${searchClothes}">
+                                    <div th:replace="home/fragment/clothes"></div>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+                </div>
+            </div>
+            <footer th:replace="home/fragment/footer"></footer>
+        </div>
+    </div>
+
+    <button class="back_to_top animated button_type_6 grey state_2 d_block black_hover f_left vc_child tr_all">
+        <i class="fa fa-angle-up d_inline_m"></i>
+    </button>
+
+    <div th:replace="home/fragment/js"></div>
+</body>
+</html>

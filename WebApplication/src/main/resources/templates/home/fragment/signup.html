@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="billingForm(customerDTO)">
+<div class="col-lg-6 col-md-6 col-sm-6 second_font">
+    <p class="form-row form-row form-row-first validate-required" id="billing_first_name_field">
+        <label for="billing_first_name" class="">Full Name<abbr class="required" title="required">*</abbr></label>
+        <input type="text" class="input-text " name="billing_first_name" id="billing_first_name" autocomplete="given-name" th:field="*{name}">
+    </p>
+</div>
+
+<div class="col-lg-6 col-md-6 col-sm-6 second_font">
+    <p class="form-row form-row form-row-first validate-required validate-email" id="billing_email_field">
+        <label for="billing_email" class="">Email Address <abbr class="required" title="required">*</abbr></label>
+        <input type="email" class="input-text " name="billing_email" id="billing_email" autocomplete="email" th:field="*{email}">
+    </p>
+</div>
+
+<div class="col-lg-6 col-md-6 col-sm-6 second_font">
+    <p class="form-row form-row form-row-last validate-required validate-phone" id="billing_phone_field">
+        <label for="billing_address" class="">Phone <abbr class="required" title="required">*</abbr></label>
+        <input type="tel" class="input-text " name="billing_phone" id="billing_phone" th:field="*{phone}">
+    </p>
+    <div class="clear"></div>
+</div>
+
+<div class="col-lg-6 col-md-6 col-sm-6 second_font">
+    <p class="form-row form-row form-row-last validate-required validate-phone" id="billing_address_field">
+        <label for="billing_city" class="">Address <abbr class="required" title="required">*</abbr></label>
+        <input type="text" class="input-text " name="billing_address" id="billing_address" th:field="*{address}">
+    </p>
+    <div class="clear"></div>
+</div>
+
+<div class="col-lg-6 col-md-6 col-sm-6 second_font">
+    <p class="form-row form-row form-row-first validate-required" id="billing_city_field">
+        <label for="billing_first_name" class="">City<abbr class="required" title="required">*</abbr></label>
+        <input type="text" class="input-text " name="billing_city" id="billing_city" th:field="*{city}">
+    </p>
+</div>
+</html>

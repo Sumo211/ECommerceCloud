@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory</title>
+</head>
+<body>
+<div id="page-content">
+    <div class="row row-margin">
+        <div class="col-md-4 col-xs-12">
+            <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#showAddStockModal">Add inventory</button>
+        </div>
+    </div>
+    <div class="row row-margin">
+        <div class="col-md-12 col-xs-12">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover table-condensed" id="inventory-table">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Product</th>
+                        <th>Amount</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="inventory : ${inventories}" th:object="${inventory}">
+                        <td th:text="*{id}"></td>
+                        <td th:text="*{clothesId}"></td>
+                        <td th:text="*{quantity}"></td>
+                        <td>
+                            <button class="btn btn-warning btn-xs" type="button" th:attr="inventory-id=*{id}"
+                                    id="edit-inventory-button" th:onclick="'editInventory(\''+ *{id} + '\');'"
+                                    data-toggle="modal" data-target="#editInventoryModal">
+                                Edit
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger btn-xs" type="button" th:attr="inventory-id=*{id}"
+                                    id="delete-inventory-button" th:onclick="'deleteInventory(\''+ *{id} + '\');'"
+                                    data-toggle="modal" data-target="#deleteInventoryModal">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

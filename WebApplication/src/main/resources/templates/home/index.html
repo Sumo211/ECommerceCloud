@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Home</title>
+    <meta th:replace="home/fragment/css" />
+</head>
+
+<body data-spy="scroll" data-target="#navigation" class="page page-id-221 page-template-default mmm mega_main_menu-2-1-2 animated-content mad__queryloader sticky_menu wpb-js-composer js-comp-ver-4.12 vc_responsive">
+<div id="wrapper">
+    <nav id="mobile-advanced" class="mobile-advanced"></nav>
+    <div class="wide_layout">
+        <header th:replace="home/fragment/header"></header>
+        <div class="page_wrapper no_sidebar">
+            <div class="container content-holder">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <section class="section-main">
+                            <div class="vc_row wpb_row vc_row-fluid vc_custom_1455298455617">
+                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                    <div class="vc_column-inner ">
+                                        <div class="wpb_wrapper">
+                                            <div class="wpb_layerslider_element wpb_content_element">
+                                                <script data-cfasync="false" type="text/javascript">
+                                                    var lsjQuery = jQuery;
+                                                </script>
+                                                <script data-cfasync="false" type="text/javascript">
+                                                    lsjQuery(document).ready(function() {
+                                                        if (typeof lsjQuery.fn.layerSlider == "undefined") {
+                                                            lsShowNotice('layerslider_4_1477818223_1', 'jquery');
+                                                        } else {
+                                                            lsjQuery("#layerslider_4_1477818223_1").layerSlider({
+                                                                responsive: false,
+                                                                responsiveUnder: 1140,
+                                                                layersContainer: 1140,
+                                                                skin: 'cosyone',
+                                                                navStartStop: false,
+                                                                showCircleTimer: false,
+                                                                skinsPath: 'http://velikorodnov.com/wordpress/cosyone/fashion/wp-content/plugins/LayerSlider/static/skins/'
+                                                            })
+                                                        }
+                                                    });
+                                                </script>
+                                                <div id="layerslider_4_1477818223_1" class="ls-wp-container" style="width:1140px;height:520px;margin:0 auto;margin-bottom: 0px;">
+                                                    <!-- Begin slide -->
+                                                    <div th:each="saleOff, iterator : ${saleOffClothes}">
+                                                        <div th:if="(${iterator.index}%3) == 0">
+                                                            <div class="ls-slide" data-ls="slidedelay:6000; transition2d: all;">
+                                                                <img src="../img/uploads/2016/03/slide4_demo5.jpg" class="ls-bg" alt="slide4_demo5" />
+                                                                <p class="ls-l" style="top:137px;left:509px;width:;height:;padding-top:;padding-right:;padding-bottom:;padding-left:;border-top:;border-right:;border-bottom:;border-left:;font-family:Roboto;font-size:15px;line-height:15px;color:#ffffff;background:;border-radius:;white-space: nowrap;" th:text="${saleOff.content.description}"></p>
+                                                                <h1 class="ls-l" style="top:190px;left:142px;width:;height:;padding-top:;padding-right:;padding-bottom:;padding-left:;border-top:;border-right:;border-bottom:;border-left:;font-family:Roboto;font-size:55px;line-height:51px;color:#ffffff;background:;border-radius:;white-space: nowrap;">
+                                                                    <b th:text="${saleOff.content.name}"></b>
+                                                                </h1>
+                                                                <p class="ls-l" style="top:285px;left:479px;width:;height:;padding-top:;padding-right:;padding-bottom:;padding-left:;border-top:;border-right:;border-bottom:;border-left:;font-family:;font-size:;line-height:;color:;background:;border-radius:;white-space: nowrap;">
+                                                                    <a th:href="@{${saleOff.id.href}}" class="button" style="left:0px;font-size:1.428em;top:368px;" data-ls="offsetxin:-100;delayin:700;easingin:easeOutBack;durationin:700;">View
+                                                                        Now!</a></p>
+                                                            </div>
+                                                        </div>
+                                                        <div th:if="(${iterator.index}%3) == 1">
+                                                            <div class="ls-slide" data-ls="slidedelay:6000; transition2d: all;">
+                                                                <img src="../img/uploads/2016/03/slide1_demo5.jpg" class="ls-bg" alt="slide1_demo5" />
+                                                                <h1 class="ls-l" style="top:188px;left:692px;text-align: right;width:;height:;padding-top:;padding-right:;padding-bottom:;padding-left:;border-top:;border-right:;border-bottom:;border-left:;font-family:Roboto;font-size:55px;line-height:51px;color:#ffffff;background:;border-radius:;white-space: nowrap;">
+                                                                    <b th:text="${saleOff.content.name}"></b>
+                                                                </h1>
+                                                                <p class="ls-l"
+                                                                   style="top:345px;left:872px;width:;height:;padding-top:;padding-right:;padding-bottom:;padding-left:;border-top:;border-right:;border-bottom:;border-left:;font-family:;font-size:;line-height:;color:;background:;border-radius:;white-space: nowrap;">
+                                                                    <a th:href="@{${saleOff.id.href}}" class="button"
+                                                                       style="left:0px;font-size:1.428em;top:368px;"
+                                                                       data-ls="offsetxin:-100;delayin:700;easingin:easeOutBack;durationin:700;">SHOP
+                                                                        NOW!</a></p>
+                                                            </div>
+                                                        </div>
+                                                        <div th:if="(${iterator.index}%3) == 2">
+                                                            <div class="ls-slide" data-ls="slidedelay:6000; transition2d: all;">
+                                                                <img src="../img/uploads/2016/03/slide2_demo5.jpg" class="ls-bg" alt="slide2_demo5" />
+                                                                <p class="ls-l" style="top:149px;left:80px;width:;height:;padding-top:;padding-right:;padding-bottom:;padding-left:;border-top:;border-right:;border-bottom:;border-left:;font-family:Roboto;font-size:15px;line-height:15px;color:#222222;background:;border-radius:;white-space: nowrap;" th:text="${saleOff.content.description}"></p>
+                                                                <h1 class="ls-l" style="top:176px;left:76px;width:;height:;padding-top:;padding-right:;padding-bottom:;padding-left:;border-top:;border-right:;border-bottom:;border-left:;font-family:Roboto;font-size:55px;line-height:51px;color:#8c0303;background:;border-radius:;white-space: nowrap;"  th:text="${saleOff.content.name}"></h1>
+                                                                <p class="ls-l" style="top:364px;left:82px;width:;height:;padding-top:;padding-right:;padding-bottom:;padding-left:;border-top:;border-right:;border-bottom:;border-left:;font-family:;font-size:;line-height:;color:#222222;background:;border-radius:;white-space: nowrap;">
+                                                                    <a th:href="@{${saleOff.id.href}}" class="button" style="left:0px;font-size:1.428em;top:368px;" data-ls="offsetxin:-100;delayin:700;easingin:easeOutBack;durationin:700;">Find
+                                                                        It Here</a></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- End slide -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vc_row wpb_row vc_row-fluid vc_custom_1458551052108">
+                                <div th:each="category : ${categories}">
+                                    <div class="wpb_column vc_column_container vc_col-sm-4">
+                                        <div class="vc_column-inner ">
+                                            <div class="wpb_wrapper">
+                                                <div class="banner-area2 wpb_content_element ">
+                                                    <a th:href="@{${category.id.href}}" class="color_lbrown color_white_hover">
+                                                        <figure class="relative wrapper scale_image_container m_bottom_30 r_image_container">
+                                                            <img class="tr_all scale_image" alt="" th:src="@{Ư}" />
+                                                            <div id="mask_black"></div>
+                                                            <figcaption>
+                                                                <div class="caption_type_1 tr_all">
+                                                                    <div class="caption_inner t_align_c tr_all">
+                                                                        <div class="d_inline_b color_lbrown  fw_light  tt_uppercase m_bottom_2" th:text="${category.content.name}"></div>
+                                                                        <h4 class='color_white  fw_light lh_medium w_break fs_sm_default' th:text="${category.content.description}"></h4>
+                                                                        <p class='color_light fw_light color_light_2 banner_info  tr_all w_break'>
+                                                                            <span class="color_lbrown color_white_hover">View Now!</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </figcaption>
+                                                        </figure>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vc_row wpb_row vc_row-fluid vc_custom_1458550876649">
+                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                    <div class="vc_column-inner ">
+                                        <div class="wpb_wrapper">
+                                            <section class="infoblock m_xs_bottom_30 type_1  infoblock-columns-3">
+                                                <hr class="divider_lbrown m_bottom_25">
+                                                <div class="row sh_container">
+                                                    <div class="infoblock-item">
+                                                        <div class="infoblock-content item_represent relative m_bottom_25 m_xs_bottom_30 h_inherit t_sm_align_c">
+                                                            <div class="d_inline_m m_sm_bottom_15 m_sm_right_0 bg_lbrown color_white m_right_17 icon_wrap_1 t_align_c vc_child">
+                                                                <i class="fa fa-unlock-alt" style="line-height:60px;"></i></div>
+                                                            <div class="d_inline_m description w_sm_full">
+                                                                <h3 class="second_font color_dark m_bottom_10">Safe & Secure</h3>
+                                                                <div class="infoblock-text fw_light m_bottom_10">
+                                                                    <p>Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue.</p>
+                                                                </div>
+                                                                <a class="sc_hover second_font" title="Click Here to Read More" target=" _blank" href="http://themeforest.net/">
+                                                                    Click Here to Read More </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="infoblock-item">
+                                                        <div class="infoblock-content item_represent relative m_bottom_25 m_xs_bottom_30 h_inherit t_sm_align_c">
+                                                            <div class="d_inline_m m_sm_bottom_15 m_sm_right_0 bg_lbrown color_white m_right_17 icon_wrap_1 t_align_c vc_child">
+                                                                <i class="fa fa-truck" style="line-height:60px;"></i>
+                                                            </div>
+                                                            <div class="d_inline_m description w_sm_full">
+                                                                <h3 class="second_font color_dark m_bottom_10">Free
+                                                                    Delivery</h3>
+                                                                <div class="infoblock-text fw_light m_bottom_10">
+                                                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maurisfermentum dictum.</p>
+                                                                </div>
+                                                                <a class="sc_hover second_font" title="Click Here to Read More" target=" _blank" href="http://themeforest.net/">
+                                                                    Click Here to Read More </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="infoblock-item">
+                                                        <div class="infoblock-content item_represent relative m_bottom_25 m_xs_bottom_30 h_inherit t_sm_align_c">
+                                                            <div class="d_inline_m m_sm_bottom_15 m_sm_right_0 bg_lbrown color_white m_right_17 icon_wrap_1 t_align_c vc_child">
+                                                                <i class="fa fa-asterisk" style="line-height:60px;"></i>
+                                                            </div>
+                                                            <div class="d_inline_m description w_sm_full">
+                                                                <h3 class="second_font color_dark m_bottom_10">Money
+                                                                    Back Guarantee</h3>
+                                                                <div class="infoblock-text fw_light m_bottom_10">
+                                                                    <p>Etiam cursus leo vel metus. Nulla facilisi aenean nac eros. Vestibulum ante ipsum.</p>
+                                                                </div>
+                                                                <a class="sc_hover second_font" title="Click Here to Read More" target=" _blank" href="http://themeforest.net/">
+                                                                    Click Here to Read More </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr class="divider_lbrown m_bottom_35 m_xs_bottom_0">
+                                            </section>
+                                            <div data-columns=4 data-sidebar=no_sidebar class="block_products products-container view-grid shop-columns-4 owl_carousel  type_2    ">
+                                                <div class="products-wrap">
+                                                    <div class="product-holder m_bottom_10">
+                                                        <h5 class='products-title second_font color_dark tt_uppercase fw_light d_inline_m m_bottom_12'>NEW</h5>
+                                                    </div>
+                                                    <hr class="divider_bg m_bottom_15">
+                                                    <div class="row">
+                                                        <div th:with="clothes=${newClothes}">
+                                                            <div th:replace="home/fragment/clothes"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="brands-logo-area m_bottom_30">
+                                                <div class="d_table m_bottom_5 w_full">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 v_align_m d_table_cell f_none">
+                                                        <h5 class='second_font color_dark tt_uppercase fw_light d_inline_m m_bottom_4'>BRANDS</h5>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 t_align_r d_table_cell f_none">
+                                                        <div class="clearfix d_inline_b">
+                                                            <button class="brands_carousel_prev black_hover button_type_4 grey state_2 tr_all d_block f_left vc_child m_right_5">
+                                                                <i class="fa fa-angle-left d_inline_m"></i></button>
+                                                            <button class="brands_carousel_next black_hover button_type_4 grey state_2 tr_all d_block f_left vc_child">
+                                                                <i class="fa fa-angle-right d_inline_m"></i></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr class="divider_bg m_bottom_15 ">
+                                                <div class="row">
+                                                    <div class="owl-carousel brands_carousel" data-nav="brands_carousel_" data-owl-carousel-options='{
+								"stagePadding" : 15,
+								"margin" : 30,
+								"responsive" : {
+								        "0" : {"items" : 2},
+										"320" : {"items" : 3 },
+										"550" : {"items" : 4},
+										"768" : {"items" : 4},
+										"992" : {"items" : 6},
+										"1200" : {"items" : 6}
+									}
+								}'>
+                                                        <div class="animated ">
+                                                            <a target="_blank" href="http://themeforest.net/" class="d_block frame_container">
+                                                                <img class="" src="../img/uploads/2016/03/m_img_10-1-165x80.jpg" width="165" height="80" alt="m_img_10" title="m_img_10" /> </a>
+                                                        </div>
+                                                        <div class="animated ">
+                                                            <a target="_blank" href="#" class="d_block frame_container">
+                                                                <img class="" src="../img/uploads/2016/03/m_img_9-1-165x80.jpg" width="165" height="80" alt="m_img_9" title="m_img_9" /> </a>
+
+                                                        </div>
+
+                                                        <div class="animated ">
+
+                                                            <a target="_blank" href="#" class="d_block frame_container">
+                                                                <img class="" src="../img/uploads/2016/03/m_img_8-1-165x80.jpg" width="165" height="80" alt="m_img_8" title="m_img_8" /> </a>
+                                                        </div>
+                                                        <div class="animated ">
+                                                            <a target="_blank" href="#" class="d_block frame_container">
+                                                                <img class="" src="../img/uploads/2016/03/m_img_7-1-165x80.jpg" width="165" height="80" alt="m_img_7" title="m_img_7" /> </a>
+                                                        </div>
+                                                        <div class="animated ">
+                                                            <a target="_blank" href="#" class="d_block frame_container">
+                                                                <img class="" src="../img/uploads/2016/03/m_img_6-1-165x80.jpg" width="165" height="80" alt="m_img_6" title="m_img_6" /> </a>
+
+                                                        </div>
+
+                                                        <div class="animated ">
+
+                                                            <a target="_blank" href="#" class="d_block frame_container">
+                                                                <img class="" src="../img/uploads/2016/03/m_img_5-1-165x80.jpg" width="165" height="80" alt="m_img_5" title="m_img_5" /> </a>
+                                                        </div>
+                                                        <div class="animated ">
+
+                                                            <a target="_blank" href="#" class="d_block frame_container">
+                                                                <img class="" src="../img/uploads/2016/03/m_img_4-1-165x80.jpg" width="165" height="80" alt="m_img_4" title="m_img_4" /> </a>
+                                                        </div>
+                                                        <div class="animated ">
+                                                            <a target="_blank" href="#" class="d_block frame_container">
+                                                                <img class="" src="../img/uploads/2016/03/m_img_3-1-165x80.jpg" width="165" height="80" alt="m_img_3" title="m_img_3" /> </a>
+                                                        </div>
+                                                        <div class="animated ">
+                                                            <a target="_blank" href="#" class="d_block frame_container">
+                                                                <img class="" src="../img/uploads/2016/03/m_img_2-1-165x80.jpg" width="165" height="80" alt="m_img_2" title="m_img_2" /> </a>
+                                                        </div>
+                                                        <div class="animated ">
+                                                            <img class="" src="../img/uploads/2016/03/m_img_1-1-165x80.jpg" width="165" height="80" alt="m_img_1" title="m_img_1" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-columns=4 data-sidebar=no_sidebar class="block_products products-container view-grid shop-columns-4 owl_carousel  type_2    ">
+                                                <div class="products-wrap">
+                                                    <div class="product-holder m_bottom_10">
+                                                        <h5 class='products-title second_font color_dark tt_uppercase fw_light d_inline_m m_bottom_12'>RANDOM</h5>
+                                                    </div>
+                                                    <hr class="divider_bg m_bottom_15">
+                                                    <div class="row">
+                                                        <div th:with="clothes=${bestSellerClothes}">
+                                                            <div th:replace="home/fragment/clothes"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer th:replace="home/fragment/footer"></footer>
+    </div>
+</div>
+<button class="back_to_top animated button_type_6 grey state_2 d_block black_hover f_left vc_child tr_all"><i class="fa fa-angle-up d_inline_m"></i></button>
+<div th:replace="home/fragment/js"></div>
+</body>
+
+</html>

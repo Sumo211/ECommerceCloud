@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Checkout</title>
+    <meta th:replace="home/fragment/css" />
+</head>
+
+<body data-spy="scroll" data-target="#navigation" class="page page-id-246 page-template-default mmm mega_main_menu-2-1-2
+    animated-content mad__queryloader sticky_menu woocommerce-account woocommerce-page wpb-js-composer js-comp-ver-4.12 vc_responsive">
+<div id="wrapper">
+    <nav id="mobile-advanced" class="mobile-advanced"></nav>
+    <div class="wide_layout">
+        <header th:replace="home/fragment/header"></header>
+        <div class="page_wrapper no_sidebar">
+            <div class="container content-holder">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="extra-heading ">
+                            <h2 class="extra-title fw_light second_font color_dark m_bottom_25 tt_uppercase">Checkout</h2></div>
+                        <section class="section-main">
+                            <div class="woocommerce">
+                                <div class="section_login checkout-column">
+                                    <div class="row">
+                                        <section class="col-lg-12 col-md-12 col-sm-12 m_bottom_40 m_xs_bottom_30">
+                                            <div class="d_table w_full m_bottom_5 second_font">
+                                                <div class="d_table_cell col-lg-6 col-md-6 col-sm-6 col-xs-10">
+                                                    <h5 class="color_dark tt_uppercase fw_light numbered_title  d_inline_m ellipsis_mxs w_full"><a class="showlogin">Returning customer? Click here to login</a></h5>
+                                                </div>
+                                                <div class="d_table_cell col-lg-6 col-md-6 col-sm-6 col-xs-2 t_align_r">
+                                                    <a href="#" class="showlogin t_align_c d_block button_type_4 grey state_2 tr_all vc_child d_inline_b black_hover"><i class="fa fa-pencil d_inline_m m_top_0"></i></a>
+                                                </div>
+                                            </div>
+                                            <hr class="divider_bg m_bottom_23">
+                                            <form method="post" class="login" style="display:none;">
+                                                <div class="col-2">
+                                                    <div th:replace="home/fragment/login"></div>
+                                                </div>
+                                                <!--/ .col-2-->
+                                            </form>
+                                        </section>
+                                    </div>
+                                    <!--/ .row-->
+                                </div>
+                                <!--/ .section_offset-->
+
+                                <form name="checkout" method="post" class="type_2 checkout woocommerce-checkout" enctype="multipart/form-data" th:object="${customerDTO}" th:action="@{/place-order}">
+                                    <div class="col2-set" id="customer_details">
+                                        <div class="section_offset">
+                                            <div class="section_billing checkout-column woocommerce-billing-fields">
+                                                <section class="m_bottom_35 m_xs_bottom_30 woocommerce-billing-fields">
+                                                    <div class="d_table w_full m_bottom_5 second_font">
+                                                        <div class="d_table_cell col-lg-12 col-md-12 col-sm-12 col-xs-10">
+                                                            <h5 class="color_dark tt_uppercase fw_light numbered_title d_inline_m ellipsis_mxs w_full">Billing Details</h5>
+                                                        </div>
+                                                    </div>
+                                                    <hr class="divider_bg m_bottom_23">
+                                                    <div class="b_default_layout">
+                                                        <div class="row">
+                                                            <div th:replace="home/fragment/signup :: billingForm(${customerDTO})"></div>
+                                                        </div>
+                                                        <div class="second_font">
+                                                            <p class="form-row create-account woocommerce-validated">
+                                                                <label class="checkbox" style="font-weight: bold; font-size: larger; cursor: pointer;">Create an account?</label>
+                                                            </p>
+                                                            <div class="create-account" style="display: none;">
+                                                                <p>Create an account by entering the information below. If you are a returning customer please login at the top of the page.</p>
+                                                                <p class="form-row form-row validate-required" id="account_password_field">
+                                                                    <label for="account_password" class="">Account password <abbr class="required" title="required">*</abbr></label>
+                                                                    <input type="password" class="input-text " name="account_password" id="account_password" placeholder="Password" value="" th:field="*{password}">
+                                                                </p>
+                                                                <div class="clear"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                        </div>
+                                        <div class="section_offset">
+                                            <div class="woocommerce-shipping-fields">
+                                                <section class="m_bottom_35 m_xs_bottom_30 woocommerce-billing-fields">
+                                                    <div class="second_font order_notes">
+                                                        <p class="color_dark d_inline_m w_full">Additional Information</p>
+                                                        <p class="form-row form-row notes" id="order_comments_field">
+                                                            <label for="order_comments" class="">Order Notes</label>
+                                                            <textarea name="order_comments" class="input-text " id="order_comments" placeholder="Notes about your order, e.g. special notes for delivery." rows="2" cols="5"></textarea>
+                                                        </p>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <section class="m_bottom_35 m_xs_bottom_30">
+                                        <div class="d_table w_full m_bottom_5 second_font">
+                                            <div class="d_table_cell col-lg-12 col-md-12 col-sm-12 col-xs-10">
+                                                <h5 id="order_review_heading" class="color_dark tt_uppercase fw_light numbered_title d_inline_m ellipsis_mxs w_full">Your order</h5>
+                                            </div>
+                                        </div>
+                                        <hr class="divider_bg m_bottom_23">
+                                        <div id="order_review" class="woocommerce-checkout-review-order">
+                                            <table class="w_full second_font order_review_table m_bottom_38 m_xs_bottom_30 order_review shop_table woocommerce-checkout-review-order-table">
+                                                <thead class="d_xs_none">
+                                                    <tr class="bg_grey_light_2">
+                                                        <th class="product-name sub-th"><b>Product</b></th>
+                                                        <th class="product-total sub-td"><b>Total</b></th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr th:each="item : ${lineItems}" class="cart_item" th:object="${item}">
+                                                        <td class="product-name sub-th fs_large" data-title="Product">
+                                                            <span th:text="*{clothes.name}"></span>
+                                                            <strong class="product-quantity" th:text="'x ' + *{quantity}"></strong>
+                                                        </td>
+                                                        <td class="product-total sub-td fs_large color_dark" data-title="Total">
+                                                            <span class="woocommerce-Price-amount amount">
+                                                                <span class="woocommerce-Price-currencySymbol" th:text="*{#numbers.formatDecimal((clothes.price - (clothes.price * clothes.discount)) * quantity, 0, 'POINT', 0, 'POINT')} + ' VND'"></span></span>
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+
+                                                <tfoot>
+
+                                                <tr class="cart-subtotal">
+                                                    <th class="sub-th"><b>Cart Subtotal</b></th>
+                                                    <td class="sub-td fs_large color_dark" data-title="Cart Subtotal">
+                                                        <span class="woocommerce-Price-amount amount">
+                                                            <span class="woocommerce-Price-currencySymbol" th:text="${#numbers.formatDecimal(subTotal, 0, 'POINT', 0, 'POINT')} + ' VND'"></span>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+
+                                                <tr class="order-total">
+                                                    <th class="sub-th"><b class="scheme_color fs_ex_large">Order Total</b></th>
+                                                    <td class="sub-td product-subtotal">
+                                                        <strong>
+                                                            <span class="woocommerce-Price-amount amount">
+                                                                <span class="woocommerce-Price-currencySymbol" th:text="${#numbers.formatDecimal(subTotal, 0, 'POINT', 0, 'POINT')} + ' VND'"></span></span>
+                                                        </strong>
+                                                    </td>
+                                                </tr>
+
+                                                </tfoot>
+                                            </table>
+
+                                            <div id="payment" class="woocommerce-checkout-payment">
+
+                                                <ul class="wc_payment_methods payment_methods methods">
+                                                    <li class="m_top_10 wc_payment_method payment_method_cheque">
+                                                        <input id="payment_method_cheque" type="radio" class="input-radio" name="payment_method" value="cheque" checked="checked" data-order_button_text="">
+
+                                                        <label class="second_font" for="payment_method_cheque">
+                                                            Check Payments </label>
+                                                        <div class="second_font m_top_10 payment_box payment_method_cheque">
+                                                            <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
+                                                        </div>
+                                                    </li>
+                                                    <li class="m_top_10 wc_payment_method payment_method_paypal">
+                                                        <input id="payment_method_paypal" type="radio" class="input-radio" name="payment_method" value="paypal" data-order_button_text="Proceed to PayPal">
+
+                                                        <label class="second_font" for="payment_method_paypal">
+                                                            PayPal <img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" alt="PayPal Acceptance Mark"><a href="https://www.paypal.com/us/webapps/mpp/paypal-popup" class="about_paypal" onclick="javascript:window.open('https://www.paypal.com/us/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;" title="What is PayPal?">What is PayPal?</a> </label>
+                                                        <div class="second_font m_top_10 payment_box payment_method_paypal" style="display:none;">
+                                                            <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.</p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+
+                                                <div class="form-row place-order">
+
+                                                    <noscript>Since your browser does not support JavaScript, or it is disabled, please ensure you click the &amp;lt;em&amp;gt;Update Totals&amp;lt;/em&amp;gt; button before placing your order. You may be charged more than the amount stated above if you fail to do so.&lt;br/&gt;&lt;input type="submit" class="button alt" name="woocommerce_checkout_update_totals" value="Update totals" /&gt;</noscript>
+
+                                                    <p class="form-row terms wc-terms-and-conditions">
+                                                        <input type="checkbox" class="input-checkbox" name="terms" id="terms">
+                                                        <label for="terms" class="checkbox">I’ve read and accept the
+                                                            <a target="_blank">terms &amp; conditions</a>
+                                                            <span class="required">*</span></label>
+                                                        <input type="hidden" name="terms-field" value="1">
+                                                    </p>
+
+                                                    <input type="submit" class="button_type_2 tt_uppercase fs_medium second_font f_right t_align_c black state_2 m_bottom_5 tr_all"
+                                                           name="woocommerce_checkout_place_order" id="place_order" value="Place order" data-value="Place order">
+
+                                                    <input type="hidden" id="_wpnonce" name="_wpnonce" value="1b9ca26ad3">
+                                                    <input type="hidden" name="_wp_http_referer" value=""> </div>
+
+                                                <div class="clear"></div>
+                                            </div>
+
+                                        </div>
+
+                                    </section>
+                                </form>
+                            </div>
+                        </section>
+                        <!--/ .section-main-->
+
+                    </div>
+                    <!--/ .col-sm-12-->
+                </div>
+                <!--/ .row-->
+            </div>
+            <!--/ .container-->
+
+        </div>
+        <footer th:replace="home/fragment/footer"></footer>
+    </div>
+</div>
+
+<button class="back_to_top animated button_type_6 grey state_2 d_block black_hover f_left vc_child tr_all"><i class="fa fa-angle-up d_inline_m"></i></button>
+
+<div th:replace="home/fragment/js"></div>
+</body>
+
+</html>

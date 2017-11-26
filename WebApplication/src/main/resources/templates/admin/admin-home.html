@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Homepage</title>
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+    <meta name="viewport" content="width=device-width"/>
+
+    <link rel="stylesheet" th:href="@{/css/admin/admin-lib/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/admin/admin-lib/animate.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/admin/admin-lib/light-bootstrap-dashboard.css}"/>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,700,300" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/css/admin/admin-lib/pe-icon-7-stroke.css}"/>
+    <link rel="stylesheet" th:href="@{/css/admin/admin.css}"/>
+
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="sidebar" data-color="red" data-image="/img/admin/sidebar-3.jpg">
+        <div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="http://www.creative-tim.com" class="simple-text">
+                    Ecommerce Cloud
+                </a>
+            </div>
+
+            <ul class="nav">
+                <li class="active">
+                    <a id="dashboard-link">
+                        <i class="pe-7s-graph"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li>
+                    <a id="category-link">
+                        <i class="pe-7s-user"></i>
+                        <p>Category</p>
+                    </a>
+                </li>
+                <li>
+                    <a id="product-link">
+                        <i class="pe-7s-note2"></i>
+                        <p>Product</p>
+                    </a>
+                </li>
+                <li>
+                    <a id="inventory-link">
+                        <i class="pe-7s-science"></i>
+                        <p>Inventory</p>
+                    </a>
+                </li>
+                <li>
+                    <a id="customer-link">
+                        <i class="pe-7s-news-paper"></i>
+                        <p>Customer</p>
+                    </a>
+                </li>
+                <li>
+                    <a id="transaction-link">
+                        <i class="pe-7s-science"></i>
+                        <p>Order</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-panel">
+        <nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Dashboard</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="">
+                                Hello, Admin!
+                            </a>
+                        </li>
+                        <li>
+                            <a th:href="@{/logout}">
+                                Log out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="content">
+            <div class="container-fluid">
+                <div id="page-content" th:replace="admin/fragment/dashboard :: dashboardFragment"></div>
+            </div>
+        </div>
+
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Company
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                About us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="copyright pull-right">
+                    &copy; 2016 <a href="http://www.creative-tim.com">Ecommerce Cloud</a> Best online cloth shop!
+                </p>
+            </div>
+        </footer>
+
+    </div>
+</div>
+<!---modal-add-category--->
+<div id="addCategoryModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="display: inline;">Add new Category</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="category-name">Name:</label>
+                    <input type="text" class="form-control" id="category-name">
+                </div>
+                <div class="form-group">
+                    <label for="category-description">Description:</label>
+                    <input type="text" class="form-control" id="category-description">
+                </div>
+                <div class="form-group">
+                    <label for="category-image">Image URL:</label>
+                    <input type="text" class="form-control" id="category-image">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-md" id="add-category-button">Add</button>
+                <button type="button" class="btn btn-default btn-md" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---modal-edit-category--->
+<div id="editCategoryModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="display: inline;">Edit Category</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="category-name">Name:</label>
+                    <input type="text" class="form-control" id="edit-category-name">
+                </div>
+                <div class="form-group">
+                    <label for="category-description">Description:</label>
+                    <input type="text" class="form-control" id="edit-category-description">
+                </div>
+                <div class="form-group">
+                    <label for="category-image">Image URL:</label>
+                    <input type="text" class="form-control" id="edit-category-image">
+                </div>
+                <div class="form-group">
+                    <input type="hidden" id="category-edit-id-holder">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-md" id="edit-category-button-submit">Save</button>
+                <button type="button" class="btn btn-default btn-md" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---modal-delete-category--->
+<div id="deleteCategoryModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="display: inline;">Confirm</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="hidden" id="category-delete-id-holder">
+                </div>
+                <h4>Are your sure to delete this category?</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-md" id="delete-category-button-submit">Delete</button>
+                <button type="button" class="btn btn-default btn-md" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---modal-show-clothes--->
+<div id="showProductModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="display: inline;">Product List</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped table-bordered table-hover table-condensed" id="show-product-table">
+                    <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>In Stock</th>
+                    </tr>
+                    </thead>
+                    <tbody id="product-table-body">
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-md" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---modal-add-clothes--->
+<div id="addNewProductModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="display: inline;">Product List</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="product-name">Name:</label>
+                    <input type="text" class="form-control" id="product-name">
+                </div>
+                <div class="form-group">
+                    <label for="product-description">Description:</label>
+                    <input type="text" class="form-control" id="product-description">
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>Category:</label>
+                        <select class="form-control"  id = "product-category-dropdown-list">
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Color:</label>
+                        <select class="form-control"  id = "product-color">
+                            <option>BLACK</option>
+                            <option>WHITE</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>Size:</label>
+                        <select class="form-control"  id = "product-size">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                            <option>XL</option>
+                            <option>XXL</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Material:</label>
+                        <select class="form-control"  id = "product-material">
+                            <option>LEATHER</option>
+                            <option>COTTON</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="product-price">Price:</label>
+                        <input type="number" class="form-control" id="product-price">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="product-discount">Discount:</label>
+                        <input type="number" class="form-control" id="product-discount">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="product-manufacture">Manufacture:</label>
+                        <input type="text" class="form-control" id="product-manufacture">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="product-image">Image link:</label>
+                        <input type="text" class="form-control" id="product-image">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-md" data-dismiss="modal" id="add-product-button">Submit</button>
+                <button type="button" class="btn btn-default btn-md" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---modal-add-stock--->
+<div id="showAddStockModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="display: inline;">Add Inventory</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="product-description">Choose product:</label>
+                    <select class="form-control"  id = "invetory-dropdown">
+                        <option>Mustard</option>
+                        <option>Ketchup</option>
+                        <option>Relish</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inventory-number-input">Number:</label>
+                    <input type="number" class="form-control" id="inventory-number-input">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-md" data-dismiss="modal">Add</button>
+                <button type="button" class="btn btn-default btn-md" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- delete customer-->
+<div id="deleteCustomerModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="display: inline;">Confirm</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="hidden" id="customer-delete-id-holder">
+                </div>
+                <h4>Are your sure to delete this customer?</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-md" id="delete-customer-button-submit">Delete</button>
+                <button type="button" class="btn btn-default btn-md" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" th:src="@{/js/admin/admin-lib/jquery-1.10.2.js}"></script>
+<script type="text/javascript" th:src="@{/js/admin/admin-lib/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/admin/admin-lib/bootstrap-checkbox-radio-switch.js}"></script>
+<script type="text/javascript" th:src="@{/js/admin/admin-lib/chartist.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/admin/admin-lib/bootstrap-notify.js}"></script>
+<script type="text/javascript" th:src="@{/js/admin/admin-lib/light-bootstrap-dashboard.js}"></script>
+<script type="text/javascript" th:src="@{/js/admin/admin-lib/chartist.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/admin/data-table/jquery.dataTables.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/admin/data-table/dataTables.bootstrap4.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/admin/AdminPage.js}"></script>
+<script type="text/javascript" th:src="@{/js/admin/AdminUlti.js}"></script>
+<script type="text/javascript" th:src="@{/js/admin/FragmentCategory.js}"></script>
+<script type="text/javascript" th:src="@{/js/admin/FragmentDashboard.js}"></script>
+<script type="text/javascript" th:src="@{/js/admin/FragmentProduct.js}"></script>
+<script type="text/javascript" th:src="@{/js/admin/FragmentCustomer.js}"></script>
+<script type="text/javascript" th:src="@{/js/admin/FragmentTransaction.js}"></script>
+<script type="text/javascript" th:src="@{/js/admin/FragmentInventory.js}"></script>
+
+<script th:inline="javascript">
+    var CONTEXT_ROOT = /*[[@{/}]]*/ "";
+
+    $(document).ready(function () {
+
+        demo.initChartist();
+
+        $.notify({
+            icon: 'pe-7s-gift',
+            message: "Welcome to <b>Ecommerce Admin Dashboard</b> - best place to shopping."
+
+        }, {
+            type: 'info',
+            timer: 4000
+        });
+
+    });
+</script>
+
+
+</body>
+</html>

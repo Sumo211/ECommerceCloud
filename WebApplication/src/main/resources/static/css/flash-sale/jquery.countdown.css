@@ -1,0 +1,108 @@
+
+.fl-pcountdown-cnt,
+.products-container.list_view_products .product_item > .fl-pcountdown-cnt  { display: none; }
+
+.single_product_description .fl-pcountdown-cnt,
+.widget .fl-pcountdown-cnt { display: block; }
+
+ul.fl-countdown
+{
+  margin-bottom: 5px;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  color: #fff;
+  font-size: 0;
+}
+
+.single_product_description ul.fl-countdown { color: #fff; font-family: 'Roboto Slab', serif; }
+
+  ul.fl-countdown li
+  {
+    display: inline-block;
+    margin: 0;
+    min-width: 20%;
+  }
+
+  ul.fl-countdown li:not(:first-child) { margin-left: 2px; }
+
+    ul.fl-countdown li span
+    {
+      display: block;
+      font-weight: 700;
+      background-color: transparent;
+      padding: 4px 0;
+      margin-bottom: 0;
+      border-radius: 0;
+      font-size: 16px;
+      line-height: 1em;
+    }
+
+    ul.fl-countdown li p
+    {
+      display: block;
+      font-size: 10px;
+      line-height: 16px;
+      background-color: transparent;
+      border-radius: 0;
+      text-transform: lowercase;
+      font-weight: 300;
+    }
+
+  /* Single Product */
+
+  .single_product_description .fl-pcountdown-cnt
+  {
+    padding-bottom: 15px;
+	padding-top: 15px;
+	padding-left:19px;
+	padding-right:19px;
+	background-color: #2c6095;
+	color:#fff;
+  }
+
+  
+    .countdown_title { display: none; }
+
+    .single_product_description .countdown_title
+    {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1em;
+	  padding-left: 15px;
+    }
+
+    .single_product_description ul.fl-countdown
+    {
+       display: inline-block;
+       margin-bottom: 0;
+       vertical-align: middle;
+       text-align: left;
+       line-height: 1em;
+    }
+
+      .single_product_description ul.fl-countdown li
+      {
+        margin-right: 2px;
+        min-width: 0;
+      }
+
+        .single_product_description ul.fl-countdown li span
+        {
+          display: inline-block;
+          margin: 0 3px 0 0;
+          padding: 0;
+          vertical-align: baseline;
+          background-color: transparent;
+        }
+
+       .single_product_description  ul.fl-countdown li p
+       {
+          display: inline-block;
+          margin: 0;
+          padding: 0;
+          vertical-align: baseline;
+          font-size: 14px;
+          background-color: transparent;
+        }
+

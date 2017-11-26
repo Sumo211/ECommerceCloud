@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Product details</title>
+    <meta th:replace="home/fragment/css" />
+</head>
+
+<body data-spy="scroll" data-target="#navigation" class="page page-id-246 page-template-default
+    mmm mega_main_menu-2-1-2 animated-content mad__queryloader sticky_menu woocommerce-account
+    woocommerce-page wpb-js-composer js-comp-ver-4.12 vc_responsive" th:object="${clothes}">
+    <div id="wrapper">
+        <nav id="mobile-advanced" class="mobile-advanced"></nav>
+        <div class="wide_layout">
+            <header th:replace="home/fragment/header"></header>
+            <div class="page_wrapper sbr">
+                <div class="container">
+                    <div class="row">
+                        <aside th:replace="home/fragment/sidebar"></aside>
+                        <main id="main" class="col-sm-8 col-md-9 content-holder">
+                            <div class="products-container clearfix ">
+                                <script type="text/javascript">
+                                    jQuery(document).ready(function() {
+                                        jQuery('<span class="mg-brand-wrapper mg-brand-wrapper-product">' +
+                                                '<a href="#">Proda</a></span>').insertBefore('.woocommerce-tabs');
+                                    });
+                                </script>
+                                <section class="section_single_product clearfix m_bottom_20 m_mxs_bottom_30">
+                                    <div class="clearfix">
+                                        <div itemscope="" itemtype="#" id="product-155" class="product post-155
+                                            type-product status-publish has-post-thumbnail product_cat-juniors
+                                            product_cat-kids product_tag-bestseller product_tag-sale product_brand-proda
+                                            first instock featured shipping-taxable purchasable product-type-simple new-badge">
+                                            <div class="single_product images">
+                                                <div th:if="*{discount} != 0">
+                                                    <div class="label_offer_percentage product_label fs_ex_small circle color_white
+                                                    bg_scheme_color t_align_c vc_child tt_uppercase">
+                                                        <i class="d_inline_m" th:text="'-' + *{#numbers.formatDecimal(discount * 100, 0, 'POINT', 1, 'POINT')} + '%'"></i>
+                                                    </div>
+                                                </div>
+
+                                                <!-- TODO -->
+                                                <div class="image_preview_container" data-id="5815f3394c8d6" id="qv_preview-5815f3394c8d6">
+                                                    <img width="600" height="600" th:src="@{*{image}}" class="img_zoom wp-post-image" alt="pic01_1-750x750" title="pic01_1-750×750"
+                                                         data-zoom-image="http://velikorodnov.com/wordpress/cosyone/fashion/wp-content/uploads/2016/05/pic01_1-750x750.jpg" id="img_zoom">
+                                                </div>
+                                                <div class="thumbnails_container relative m_bottom_3" style="padding-right: 0;" data-output="#qv_preview-5815f3394c8d6">
+                                                    <div class="owl-carousel owl-theme owl-loaded" id="thumbnails_5815f3394c8d6" data-nav="thumbnails_product_" data-owl-carousel-options="{
+                                                    &quot;responsive&quot; : {
+                                                        &quot;0&quot; : {
+                                                            &quot;items&quot; : 3
+                                                        },
+                                                        &quot;321&quot; : {
+                                                            &quot;items&quot; : 4
+                                                        },
+                                                        &quot;769&quot; : {
+                                                            &quot;items&quot; : 2
+                                                        },
+                                                        &quot;992&quot; : {
+                                                            &quot;items&quot; : 3
+                                                        }
+                                                    },
+
+                                                    &quot;stagePadding&quot; : 0,
+                                                    &quot;margin&quot; : 10,
+                                                    &quot;URLhashListener&quot; : false
+                                                    }">
+
+                                                        <div class="owl-stage-outer">
+                                                            <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: 0s; width: 550px;">
+                                                                <div class="owl-item active" style="width: 100px; margin-right: 10px;">
+                                                                    <a href="javascript:void(0);" data-image="http://velikorodnov.com/wordpress/cosyone/fashion/wp-content/uploads/2016/05/pic11_1-750x750-180x180.jpg"
+                                                                       data-zoom-image="http://velikorodnov.com/wordpress/cosyone/fashion/wp-content/uploads/2016/05/pic11_1-750x750-180x180.jpg" class="elzoom first d_block active" title="pic11_1-750×750">
+                                                                        <img width="180" height="180" src="http://velikorodnov.com/wordpress/cosyone/fashion/wp-content/uploads/2016/05/pic11_1-750x750-180x180.jpg" class="attachment-shop_thumbnail size-shop_thumbnail" alt="pic01_1-750x750"></a>
+                                                                </div>
+                                                                <div class="owl-item active" style="width: 100px; margin-right: 10px;">
+                                                                    <a href="javascript:void(0);" data-image="http://velikorodnov.com/wordpress/cosyone/fashion/wp-content/uploads/2016/05/pic11_2-750x750-180x180.jpg"
+                                                                       data-zoom-image="http://velikorodnov.com/wordpress/cosyone/fashion/wp-content/uploads/2016/05/pic11_2-750x750.jpg" class="elzoom d_block" title="pic01_2-750×750">
+                                                                        <img width="180" height="180" src="http://velikorodnov.com/wordpress/cosyone/fashion/wp-content/uploads/2016/05/pic11_2-750x750-180x180.jpg" class="attachment-shop_thumbnail size-shop_thumbnail" alt="pic01_2-750x750"></a>
+                                                                </div>
+                                                                <div class="owl-item active" style="width: 100px; margin-right: 10px;">
+                                                                    <a href="javascript:void(0);" data-image="http://velikorodnov.com/wordpress/cosyone/fashion/wp-content/uploads/2016/05/pic11_3-750x750-180x180.jpg"
+                                                                       data-zoom-image="http://velikorodnov.com/wordpress/cosyone/fashion/wp-content/uploads/2016/05/pic11_3-750x750.jpg" class="elzoom last d_block" title="pic01_1-750×750">
+                                                                        <img width="180" height="180" src="http://velikorodnov.com/wordpress/cosyone/fashion/wp-content/uploads/2016/05/pic11_3-750x750-180x180.jpg" class="attachment-shop_thumbnail size-shop_thumbnail" alt="pic01_1-750x750"></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="owl-controls">
+                                                            <div class="owl-nav">
+                                                                <div class="owl-prev" style="display: none;">prev</div>
+                                                                <div class="owl-next" style="display: none;">next</div>
+                                                            </div>
+                                                            <div class="owl-dots" style="">
+                                                                <div class="owl-dot active"><span></span></div>
+                                                                <div class="owl-dot"><span></span></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--/ .thumbs_carousel-->
+
+
+                                                </div>
+                                                <!--/ .product_preview-->
+
+                                                <div class="share-links-wrapper m_top_15">
+                                                    <p class="d_inline_m m_right_5 fw_light m_md_bottom_3 m_bottom_0">Share this:</p>
+                                                    <div class="d_inline_m share-links">
+                                                        <a href="http://www.facebook.com/sharer.php?u=http://velikorodnov.com/wordpress/cosyone/fashion/product/praesent-sapien-massa/&amp;text=Praesent+sapien+massa&amp;images=http://velikorodnov.com/wordpress/cosyone/fashion/wp-content/uploads/2016/05/pic01_1-750x750.jpg" target="_blank" title="Facebook" class="share-facebook share-link">Facebook</a>
+
+                                                        <a href="https://twitter.com/intent/tweet?text=Praesent+sapien+massa&amp;url=http://velikorodnov.com/wordpress/cosyone/fashion/product/praesent-sapien-massa/" target="_blank" title="Twitter" class="share-twitter">Twitter</a>
+
+                                                        <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://velikorodnov.com/wordpress/cosyone/fashion/product/praesent-sapien-massa/&amp;title=Praesent+sapien+massa" target="_blank" title="LinkedIn" class="share-linkedin">LinkedIn</a>
+
+                                                        <a href="https://plus.google.com/share?url=http://velikorodnov.com/wordpress/cosyone/fashion/product/praesent-sapien-massa/" target="_blank" title="Google +" class="share-googleplus">Google +</a>
+
+                                                        <a href="https://pinterest.com/pin/create/link/?url=http://velikorodnov.com/wordpress/cosyone/fashion/product/praesent-sapien-massa/&amp;media=http://velikorodnov.com/wordpress/cosyone/fashion/wp-content/uploads/2016/05/pic01_1-750x750.jpg" target="_blank" title="Pinterest" class="share-pinterest">Pinterest</a>
+
+                                                        <a href="http://www.tumblr.com/share/link?url=http://velikorodnov.com/wordpress/cosyone/fashion/product/praesent-sapien-massa/&amp;name=Praesent%2Bsapien%2Bmassa&amp;description=Praesent+sapien+massa%2C+convallis+a+pellentesque+nec%2C+egestas+non+nisi.+Vestibulum+ante+ipsum+primis+in+faucibus+orci+luctus+et+ultrices+posuere+cubilia+Curae%3B+Donec+velit+neque%2C+auctor+sit+amet+aliquam+vel%2C+ullamcorper+sit+amet+ligula.+Proin+eget+tortor+risus.+Vestibulum+ac+diam+sit+amet+quam+vehicula+elementum+sed+sit+amet+dui.+Curabitur+non+nulla+sit+amet+nisl+tempus+convallis+quis+ac+lectus.+Donec+rutrum+congue+leo+eget+malesuada.+Praesent+sapien+massa%2C+convallis+a+pellentesque+nec%2C+egestas+non+nisi.+Nulla+porttitor+accumsan+tincidunt.+Vivamus+magna+justo%2C+lacinia+eget+consectetur+sed%2C+convallis+at+tellus.+Curabitur+arcu+erat%2C+accumsan+id+imperdiet+et%2C+porttitor+at+sem." target="_blank" title="Tumblr" class="share-tumblr">Tumblr</a>
+
+                                                    </div>
+                                                </div>
+                                                <!--/ .share-links-wrapper-->
+
+                                            </div>
+                                            <!--/ .single_product-->
+
+                                            <div class="single_product_description">
+
+                                                <h3 itemprop="name" class="second_font m_bottom_3 m_top_0" th:text="*{name}"></h3>
+
+                                                <div class="page-nav">
+
+                                                </div>
+                                                <!--/ .page-nav-->
+
+                                                <div class="description_section">
+
+                                                        <span class="top-bar color_light d_inline_m">
+
+                                                        <a href="#reviews" class="woocommerce-review-link sc_hover fs_medium fw_light" rel="nofollow">1 Review</a> |
+
+                                                        <a href="#commentform" class="woocommerce-write-review-link color_dark sc_hover fs_medium fw_light" rel="nofollow">Add Your Review</a>
+
+                                                    </span>
+                                                    <!--/ .top-bar-->
+
+                                                </div>
+
+                                                <div class="description_section single_meta">
+                                                    <table class="product_info">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td class="second_font">Availability:</td>
+                                                            <td><span class="stock in-stock">
+                                                                <span class="scheme_color fw_light" th:text="${inStock}"></span>
+                                                                <span class="fw_light">in stock</span></span>
+                                                            </td>
+                                                            <!--<td><span class="stock in-stock"><span class="scheme_color fw_light" th:text="*{inStock} + ' items '"></span> <span class="fw_light" >    in stock</span></span></td>-->
+                                                        </tr>
+                                                        <tr class="sku_wrapper">
+                                                            <td class="second_font">Product Code:</td>
+                                                            <td><span class="sku fw_light" itemprop="sku" th:text="*{sku}"></span></td>
+                                                            <!--<td><span class="sku fw_light" itemprop="sku" th:text="*{code}"></span></td>-->
+                                                        </tr>
+                                                        </tbody>
+                                                        <tr class="sku_wrapper">
+                                                            <td class="second_font">Size:</td>
+                                                            <td><span class="sku fw_light" itemprop="sku" th:text="*{size}"></span></td>
+                                                            <!--<td><span class="sku fw_light" itemprop="sku" th:text="*{code}"></span></td>-->
+                                                        </tr>
+                                                        </tbody>
+                                                        <tr class="sku_wrapper">
+                                                            <td class="second_font">Material:</td>
+                                                            <td><span class="sku fw_light" itemprop="sku" th:text="*{material}"></span></td>
+                                                            <!--<td><span class="sku fw_light" itemprop="sku" th:text="*{code}"></span></td>-->
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <!--/ .product_info-->
+                                                </div>
+                                                <!--/ .description_section-->
+
+                                                <div class="product_short_description">
+                                                    <hr>
+                                                    <div class="description_section">
+                                                        <p th:text="*{description}"></p>
+                                                    </div>
+                                                    <!--/ .description_section-->
+                                                </div>
+
+                                                <div th:if="*{discount} != 0">
+                                                    <div itemprop="offers" itemscope="" itemtype="">
+                                                        <p class="product_price">
+                                                            <b class="scheme_color">
+                                                                <del>
+                                                                    <span class="woocommerce-Price-amount amount">
+                                                                        <span class="woocommerce-Price-currencySymbol" th:text="*{#numbers.formatDecimal(price, 0, 'POINT', 0, 'POINT')} + ' VND'"></span>
+                                                                    </span>
+                                                                </del>
+                                                                <ins>
+                                                                    <span class="woocommerce-Price-amount amount">
+                                                                        <span class="woocommerce-Price-currencySymbol" th:text="*{#numbers.formatDecimal(price - (price * discount), 0, 'POINT', 0, 'POINT')} + ' VND'"></span>
+                                                                    </span>
+                                                                </ins>
+                                                            </b>
+                                                        </p>
+                                                    </div>
+
+                                                    <table class="flashsale_table w_full m_bottom_0">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td class="scheme_color">
+                                                                <p class="fw_light m_top_5 m_bottom_7 m_xs_top_0 m_xs_bottom_0">Special Priced:</p>
+                                                                <b class="fs_big second_font d_block m_bottom_7 m_xs_bottom_0" th:text="*{#numbers.formatDecimal(price - (price * discount), 0, 'POINT', 0, 'POINT')} + 'VND'"></b>
+                                                            </td>
+                                                            <td class="color_light">
+                                                                <p class="fw_light m_top_5 m_bottom_7 m_xs_top_0 m_xs_bottom_0">Old Price:</p>
+                                                                <b class="fs_big second_font d_block m_bottom_7 m_xs_bottom_0" th:text="*{#numbers.formatDecimal(price, 0, 'POINT', 0, 'POINT')} + 'VND'"></b>
+                                                            </td>
+                                                            <td class="color_blue">
+                                                                <p class="fw_light m_top_5 m_bottom_7 m_xs_top_0 m_xs_bottom_0">You Save:</p>
+                                                                <b class="fs_big second_font d_block m_bottom_7 m_xs_bottom_0" th:text="*{#numbers.formatDecimal(price * discount, 0, 'POINT', 0, 'POINT')} + 'VND'"></b>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                    <div class="fl-pcountdown-cnt m_bottom_20"><span class="fw_light d_inline_m m_right_5">This limited offer ends in:</span>
+                                                        <ul class="fl-countdown fl-countdown-pub countdown_86 l_s_none">
+                                                            <li><span class="days">2</span>
+                                                                <p class="days_text">days</p>
+                                                            </li>
+                                                            <li class="seperator">:</li>
+                                                            <li><span class="hours">10</span>
+                                                                <p class="hours_text">hrs</p>
+                                                            </li>
+                                                            <li class="seperator">:</li>
+                                                            <li><span class="minutes">12</span>
+                                                                <p class="minutes_text">min</p>
+                                                            </li>
+                                                            <li class="seperator">:</li>
+                                                            <li><span class="seconds">07</span>
+                                                                <p class="seconds_text">sec</p>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div th:if="*{discount} == 0">
+                                                    <div itemprop="offers" itemscope="" itemtype="">
+                                                        <p class="product_price">
+                                                            <b class="scheme_color">
+                                                                <ins>
+                                                                    <span class="woocommerce-Price-amount amount">
+                                                                        <span class="woocommerce-Price-currencySymbol" th:text="*{#numbers.formatDecimal(price, 0, 'POINT', 0, 'POINT')} + ' VND'"></span>
+                                                                    </span>
+                                                                </ins>
+                                                            </b>
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <script type="text/javascript">
+                                                    jQuery(".countdown_86").countdown({
+                                                        date: "2016/12/31 15:33",
+                                                        offset: -8,
+                                                        day: "day",
+                                                        days: "days",
+                                                        hours: "hrs",
+                                                        minutes: "min",
+                                                        seconds: "sec"
+                                                    }, function() {
+
+                                                    });
+                                                </script>
+
+                                                <footer class="bg_grey_light_2">
+                                                    <a class="single_add_to_cart_button button_type_2 d_block t_align_c lbrown state_2
+                                                    tr_all second_font fs_medium tt_uppercase f_left m_right_3" th:attr="data-product-id=*{id}">
+                                                        <i class="fa fa-shopping-cart d_inline_m m_right_9"></i>Add to cart
+                                                    </a>
+                                                    <a th:href="@{/get-cart}" class="single_add_to_cart_button added-to-cart-color button_type_2 d_block t_align_c lbrown state_2
+                                                    tr_all second_font fs_medium tt_uppercase f_left m_right_3" style="display: none;">
+                                                        <i class="added_to_cart m_right_9"></i>View Cart
+                                                    </a>
+                                                </footer>
+
+                                            </div>
+                                            <!--/ .single_product_description-->
+
+                                        </div>
+                                        <!-- #clothes-155 -->
+
+                                    </div>
+                                    <!--/ .clearfix-->
+
+                                </section>
+                                <!--/ .section_offset-->
+
+                                <div class="clear"></div>
+
+                                <section class="section_offset">
+
+                                    <div class="tabs styled_tabs m_bottom_18" data-easytabs="true">
+
+                                        <nav class="second_font">
+                                            <ul class="hr_list m_bottom_0 l_s_none">
+                                                <li class="m_right_3 description_tab color_dark">
+                                                    <a href="#tab-description" class="color_light border_light_3 d_block color_dark">Description</a>
+                                                </li>
+                                                <li class="m_right_3 reviews_tab">
+                                                    <a href="#tab-reviews" class="color_light border_light_3 d_block">Reviews (1)</a>
+                                                </li>
+                                                <li class="m_right_3 questions_tab">
+                                                    <a href="#tab-questions" class="color_light border_light_3 d_block">Questions &amp; Answers</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+
+                                        <hr class="d_xs_none">
+
+                                        <!-- - - - - - - - - - - - - - Tab - - - - - - - - - - - - - - - - -->
+
+                                        <div class="tab_content active" id="tab-description" style="display: block;">
+                                            <p th:text="*{description}"></p>
+
+                                            <!--<div class="product-single-meta">
+                                                <span class="posted_in">Categories: <a href="http://velikorodnov.com/wordpress/cosyone/fashion/product-category/jeans/juniors/" rel="tag">Juniors</a>, <a href="http://velikorodnov.com/wordpress/cosyone/fashion/product-category/jeans/kids/" rel="tag">Kids</a>.</span>&nbsp;
+                                                <span class="tagged_as">Tags: <a href="http://velikorodnov.com/wordpress/cosyone/fashion/product-tag/bestseller/" rel="tag">bestseller</a>, <a href="http://velikorodnov.com/wordpress/cosyone/fashion/product-tag/sale/" rel="tag">sale</a>.</span>
+                                            </div>-->
+                                        </div>
+
+                                        <div class="tab_content" id="tab-reviews" style="display: none;">
+
+                                            <section class="section_reviews">
+
+                                                <ul id="reviews" class="reviews m_bottom_30">
+
+                                                    <li itemprop="review" itemscope="" itemtype="http://schema.org/Review" class="comment even thread-even depth-1 m_bottom_20" id="li-comment-7">
+
+                                                        <article class="review">
+
+                                                            <div id="comment-7" class="comment_container">
+
+                                                                <div class="m_bottom_12 clearfix">
+                                                                    <div class="f_left lh_small  f_xs_none">
+
+                                                                        <div itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating" class="star-rating" title="Rated 5 out of 5">
+                                                                            <span style="width:100%"><strong itemprop="ratingValue">5</strong> out of 5</span>
+                                                                        </div>
+
+                                                                        <a href="#" class="second_font color_default sc_hover d_inline_b v_align_b">admin,</a>
+                                                                        <span class="color_light fs_medium d_inline_b v_align_b fw_light">30 Mar 2016</span>
+
+                                                                    </div>
+                                                                    <div class="f_right f_xs_none">
+
+                                                                        <div itemscope="" itemtype="http://schema.org/Rating" class="star-rating" title="Rated 5 out of 5">
+                                                                            <span style="width:100%"><strong>5</strong> out of 5</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="fw_light description">
+                                                                    <p>Donec rutrum congue leo eget malesuada. Sed porttitor lectus nibh. Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.</p>
+                                                                </div>
+
+                                                            </div>
+                                                            <!--/ .comment_container-->
+
+                                                        </article>
+                                                        <!--/ .review-->
+
+                                                    </li>
+                                                    <!-- #comment-## -->
+
+                                                </ul>
+
+                                                <div id="respond" class="comment-respond">
+                                                    <h3 id="reply-title" class="comment-reply-title">Write A Review <small><a rel="nofollow" id="cancel-comment-reply-link" href="#" style="display:none;"> - Cancel quote</a></small></h3>
+                                                    <form action="http://velikorodnov.com/wordpress/cosyone/fashion/wp-comments-post.php" method="post" id="contactform" class="comment-form">
+                                                        <p class="comment-form-author">
+                                                            <label for="author" class="second_font required clickable d_inline_b m_bottom_5">Name</label>
+                                                            <br>
+                                                            <input id="author" class="tr_all w_full fw_light fs_medium color_light" name="author" type="text" value="" size="100" aria-required="true">
+                                                        </p>
+                                                        <p class="comment-form-email">
+                                                            <label for="email">Email <span class="required"></span></label>
+                                                            <br>
+                                                            <input id="email" class="tr_all w_full fw_light fs_medium color_light" name="email" type="text" value="" size="100" aria-required="true">
+                                                        </p>
+                                                        <p class="comment-form-url">
+                                                            <label for="url" class="second_font clickable d_inline_b m_bottom_5">Website</label>
+                                                            <br>
+                                                            <input id="url" class="tr_all w_full fw_light fs_medium color_light" name="url" type="text" value="" size="100">
+                                                        </p>
+                                                        <p class="comment-form-comment">
+                                                            <label for="comment" class="second_font required clickable d_inline_b m_bottom_5">Your Review</label>
+                                                            <textarea id="comment" class="tr_all w_full fw_light fs_medium color_light" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+                                                        </p>
+                                                        <label class="comment-form-desc second_font required d_inline_m m_right_5">Rating</label>
+                                                        <p class="comment-form-rating tr_all d_inline_m m_bottom_0">
+                                                        <p class="stars"><span><a class="star-1" href="#">1</a><a class="star-2" href="#">2</a><a class="star-3" href="#">3</a><a class="star-4" href="#">4</a><a class="star-5" href="#">5</a></span></p>
+                                                        <select class="hidden" name="rating" id="rating" style="display: none;">
+                                                            <option value="">Rate…</option>
+                                                            <option value="5">Perfect</option>
+                                                            <option value="4">Good</option>
+                                                            <option value="3">Average</option>
+                                                            <option value="2">Not that bad</option>
+                                                            <option value="1">Very Poor</option>
+                                                        </select>
+                                                        </p>
+                                                        <p class="form-submit">
+                                                            <input name="submit" type="submit" id="contactform-submit" class="submit button_type_2 d_block t_align_c black state_2 tr_all second_font fs_medium tt_uppercase f_right d_inline_b" value="Submit">
+                                                            <input type="hidden" name="comment_post_ID" value="155" id="comment_post_ID">
+                                                            <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                                <!-- #respond -->
+
+                                            </section>
+                                            <!--/ .section_offset-->
+
+                                        </div>
+
+                                        <div class="tab_content" id="tab-questions" style="display: none;">
+
+                                            <div class="questions-section">
+                                                <h3>Questions and answers of the customers</h3>
+
+                                                <div id="ywqa_question_list">
+
+                                                    <p class="woocommerce-noreviews">There are no questions yet, be the first to ask something for this product.</p>
+
+                                                    <div class="clear"></div>
+                                                </div>
+
+                                                <div id="ask_question">
+                                                    <form id="ask_question_form" method="POST">
+                                                        <input type="hidden" name="ywqa_product_id" value="155">
+                                                        <input type="hidden" name="add_new_question" value="1">
+                                                        <input type="hidden" id="ask_question" name="ask_question" value="fa8ef47ef3">
+                                                        <input type="hidden" name="_wp_http_referer" value="/wordpress/cosyone/fashion/product/praesent-sapien-massa/">
+                                                        <div class="ywqa-ask-question">
+                                                            <input class="ywqa-ask-question-text" id="ywqa_ask_question_text" name="ywqa_ask_question_text" placeholder="Do you have any question? Ask now!">
+
+                                                            <input id="ywqa-submit-question" type="submit" class="ywqa_submit_question" value="Ask" title="Ask your question">
+                                                        </div>
+                                                    </form>
+
+                                                </div>
+
+                                                <div class="clearfix"></div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <!--/ .tabs-->
+
+                                </section>
+                                <!--/ .section_offset-->
+
+                            </div>
+                            <!--/ .products-container-->
+
+                        </main>
+                        <!--/ #main-->
+
+                    </div>
+                    <!--/ .row-->
+
+                </div>
+                <!--/ .container-->
+
+            </div>
+
+            <!-- - - - - - - - - - - -/ Page Content - - - - - - - - - - - - - - -->
+
+            <!-- - - - - - - - - - - - - - Footer - - - - - - - - - - - - - - - - -->
+            <footer th:replace="home/fragment/footer"></footer>
+
+            <!-- - - - - - - - - - - - - -/ Footer - - - - - - - - - - - - - - - - -->
+
+        </div>
+        <!--/ [layout]-->
+
+    </div>
+<!--/ #wrapper-->
+
+<!--back to top-->
+<button class="back_to_top animated button_type_6 grey state_2 d_block black_hover f_left vc_child tr_all"><i class="fa fa-angle-up d_inline_m"></i></button>
+
+<div th:replace="home/fragment/js"></div>
+<script>
+    (function($) {
+        $(document).on('click', '#open_shopping_cart', function() {
+            $(this).toggleClass('active').next().toggleClass("fadeInUp visible");
+        });
+    })(jQuery);
+</script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Order Received</title>
+    <meta th:replace="home/fragment/css" />
+</head>
+
+<body data-spy="scroll" data-target="#navigation" class="page page-id-246 page-template-default mmm mega_main_menu-2-1-2
+    animated-content mad__queryloader sticky_menu woocommerce-account woocommerce-page wpb-js-composer js-comp-ver-4.12 vc_responsive">
+<div id="wrapper">
+    <nav id="mobile-advanced" class="mobile-advanced"></nav>
+    <div class="wide_layout">
+        <header th:replace="home/fragment/header"></header>
+        <div class="page_wrapper no_sidebar">
+
+            <div class="container content-holder">
+
+                <div class="row">
+
+                    <div class="col-sm-12">
+
+                        <!-- - - - - - - - - - - - - Page - - - - - - - - - - - - - - - -->
+
+                        <div class="extra-heading ">
+                            <h2 class="extra-title fw_light second_font color_dark m_bottom_25 tt_uppercase">Order Received</h2></div>
+                        <section class="section-main">
+                            <div class="woocommerce">
+
+                                <p class="woocommerce-thankyou-order-received">Thank you. Your order has been received.</p>
+
+                                <table class="shop_table woocommerce-thankyou-order-details order_details" th:object="${orderDTO}">
+                                    <thead>
+                                    <tr>
+                                        <th>Order:</th>
+                                        <th th:text="*{orderId}"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Date:</td>
+                                        <td th:text="*{dateCreated}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total:</td>
+                                        <td><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"th:text="*{#numbers.formatDecimal(total, 0, 'POINT', 0, 'POINT')} + ' VND'"></span></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Payment method:</td>
+                                        <td>
+                                            Check Payments
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="clear"></div>
+                            </div>
+                        </section>
+                        <!--/ .section-main-->
+
+                        <!-- - - - - - - - - - - - -/ Page - - - - - - - - - - - - - - -->
+
+                    </div>
+                    <!--/ .col-sm-12-->
+                </div>
+                <!--/ .row-->
+            </div>
+            <!--/ .container-->
+
+        </div>
+        <footer th:replace="home/fragment/footer"></footer>
+    </div>
+</div>
+
+<button class="back_to_top animated button_type_6 grey state_2 d_block black_hover f_left vc_child tr_all"><i class="fa fa-angle-up d_inline_m"></i></button>
+
+<div th:replace="home/fragment/js"></div>
+</body>
+
+</html>

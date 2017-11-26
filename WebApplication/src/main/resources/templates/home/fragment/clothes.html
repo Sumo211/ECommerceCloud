@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div id="product-list-result" class="products">
+    <div th:each="detail: ${clothes}" class="product_item frame_container first m_xs_bottom_30 m_bottom_40 post-163
+        product type-product status-publish has-post-thumbnail product_cat-juniors product_cat-sweatshirts
+        product_cat-twill product_tag-regular product_tag-rooms product_tag-slim product_brand-colvin-kloin
+        instock featured shipping-taxable purchasable product-type-simple new-badge">
+
+        <div class="image_wrap c_image_container">
+            <a href="#">
+                <img width="300" height="300" th:src="@{${detail.content.image}}" class='c_image_1 tr_all' alt='' />
+            </a>
+            <div class="actions_wrap">
+                <div class="centered_buttons">
+                    <a th:href="@{${detail.id.href}}" class="quick-view tr_all second_font qv_style_button tt_uppercase t_align_c d_block clickable d_xs_none">
+                        <i class="fa fa-eye d_inline_m m_right_10 color_white"></i>
+                        <span th:href="@{${detail.id.href}}" class="fs_medium color_white">View Details</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="description">
+            <div class="content-product-title">
+                <a class="product-title second_font sc_hover d_xs_block" th:href="@{${detail.id.href}}" th:text="${detail.content.name}"></a>
+            </div>
+            <div class="product_info second_font">
+                <p class="product_price">
+                    <b>
+                        <span class="woocommerce-Price-amount amount">
+                            <span class="woocommerce-Price-currencySymbol" th:text="${#numbers.formatDecimal(detail.content.price, 0, 'POINT', 0, 'POINT')} + ' VND'"></span>
+                        </span>
+                    </b>
+                </p>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="buttons_row clearfix">
+            <div class="clearfix d_inline_b var_2">
+                <a rel="nofollow" th:attr="data-product-id=${detail.content.id}" style="cursor: pointer"
+                   class="def_icon_btn add_to_cart alignright product_type_simple add_to_cart_button ajax_add_to_cart" title="Add to cart">
+                    <i class="fa fa-shopping-cart fs_large d_inline_m"></i>
+                    <span class="feedback">Add to cart</span>
+                </a>
+                <a th:href="@{/get-cart}" class="added_to_cart wc-forward" title="View Cart" style="display:none">View Cart</a>
+            </div>
+        </div>
+    </div>
+</div>
+</html>
